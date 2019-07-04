@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/info" size="large"></ion-icon>
+    <ion-title>Update skill</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background">
+
+<ion-item>
+  <div class="container" id="grad">
+
+
+    <!-- <div [hidden]="submitted"> -->
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+
+      <div class="form-group">
+        <ion-item>
+          <ion-label position="floating" for="Skill_level">Skill level</ion-label>
+          <ion-input type="text" class="form-control" id="level" placeholder=" " required [(ngModel)]="level"
+            name="level" #Skill_level="ngModel"> </ion-input>
+        </ion-item>
+        <div [hidden]="Skill_level.valid || Skill_level.pristine" class="alert-danger">
+
+          Skill level is required
+
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <ion-item>
+          <ion-label color=dark position="floating" for="Date_last_used">Date last used</ion-label>
+          <ion-datetime class="form-control" id="lastUsed" placeholder=" " required [(ngModel)]="lastUsed"
+            name="lastUsed" display-format="DD MMM YYYY" placeholder=' ' #Date_last_used="ngModel"
+            name="Date_last_used"></ion-datetime>
+
+        </ion-item>
+        <div [hidden]="Date_last_used.valid || Date_last_used.pristine" class="alert-danger">
+
+          Date last used is required
+
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <ion-item>
+          <ion-label color=dark position="floating" for="Months_of_active_experience">Months
+            of active experience</ion-label>
+          <ion-input type="text" class="form-control" id="activeExperience" placeholder=" " required
+            [(ngModel)]="activeExperience" name="activeExperience" #Months_of_active_experience="ngModel">
+          </ion-input>
+        </ion-item>
+        <div [hidden]="Months_of_active_experience.valid || Months_of_active_experience.pristine" class="alert-danger">
+
+          Months of active experience is required
+
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <ion-item>
+          <ion-label color=dark position="floating" for="Developing_skill">Are you
+            currently developing this skill?
+          </ion-label>
+          <ion-select class="form-control" id="active" placeholder=" " required [(ngModel)]="active" name="active"
+            #Developing_skill="ngModel">
+            <ion-select-option value="yes" selected="true">Yes</ion-select-option>
+            <ion-select-option value="no"></ion-select-option>
+          </ion-select>
+
+        </ion-item>
+        <div [hidden]="Developing_skill.valid || Developing_skill.pristine" class="alert-danger">
+
+          This option is required
+
+        </div>
+      </div>
+
+      <ion-item>
+        <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="square" size="medium"
+          (click)="UpdateSkills()" [disabled]="!heroForm.valid">
+          Update
+        </ion-button>
+
+      </ion-item>
+
+    </form>
+  </div>
+
+</ion-item>
+</ion-content>

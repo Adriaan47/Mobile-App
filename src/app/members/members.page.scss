@@ -1,0 +1,33 @@
+ion-content.background{
+    --background: -webkit-linear-gradient(left, #dfdfeb, #e02f9c);
+ 
+    }
+
+    #buttonColor{
+        --background: #960584;
+    }
+
+    img.background{
+        --background: url(../../assets/img/lady_avatar-512.png) 0 0/100% 100% no-repeat;
+    }
+    ion-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 90px 1px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+
+      
+	  .item-avatar  {     
+		width:133% !important;  
+		height : 133% !important;  
+		max-width: 133px !important;  //any size
+		max-height: 133px !important; //any size 
+		}
+
+     
+
+  

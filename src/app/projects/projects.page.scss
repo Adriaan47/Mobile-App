@@ -1,0 +1,25 @@
+ion-content.background{
+    // --background: url(../../assets/Background1.png) 0 0/100%  no-repeat;;
+    --background: -webkit-linear-gradient(left, #dfdfeb, #e02f9c);
+ 
+    }
+
+ion-card.White{
+    --background: url(../../assets/CardColor.png) 0 0/100%  repeat;
+ 
+    }
+
+    .item-content {
+        background-color:#2fe06a;
+      }
+      ion-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 90px 1px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+      
+  

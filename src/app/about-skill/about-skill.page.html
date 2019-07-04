@@ -1,0 +1,140 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item>
+      <ion-icon slot="start" name="arrow-round-back" size="large" (click)="presentAlertConfirm()" size="large"></ion-icon>
+      <ion-title>Edit all skills</ion-title>
+
+      <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="square"
+        (click)="presentAlertConfirm2()" (click)="createPost()" (click)="updateDetails()" size="medium"> Update
+      </ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background">
+
+  <div *ngIf="skills">
+
+    <div *ngFor="let post of skills; let i = index">
+
+      <ion-list>
+
+        <ion-item>Skill {{i+1}}</ion-item>
+
+        <div class="container" id="grad">
+          <div [hidden]="submitted">
+            <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+              <div class="form-group">
+                <ion-item>
+                  <ion-label position="floating" for="Skill"> Skill </ion-label>
+                  <ion-input type="text" class="form-control" id="Skill" required [(ngModel)]="post.skill" name="Skill"
+                    placeholder='' #Skill="ngModel"></ion-input>
+                </ion-item>
+                <div [hidden]="Skill.valid || Skill.pristine" class="alert-danger">
+
+                  Skill is required
+
+                </div>
+              </div>
+
+              <div class="container" id="grad">
+                <div [hidden]="submitted">
+                  <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+                    <div class="form-group">
+                      <ion-item>
+                        <ion-label position="floating" for="level">level</ion-label>
+                        <ion-input type="text" class="form-control" id="level" required [(ngModel)]="post.level"
+                          name="level" placeholder='' #level="ngModel"></ion-input>
+                      </ion-item>
+                      <div [hidden]="level.valid || level.pristine" class="alert-danger">
+
+                        Skill level is required
+
+                      </div>
+                    </div>
+
+                    <div class="container" id="grad">
+                      <div [hidden]="submitted">
+                        <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+                          <div class="form-group">
+                            <ion-item>
+                              <ion-label position="floating" for="Last_used">Last used </ion-label>
+                              <ion-input type="text" class="form-control" id="Last_used" required
+                                [(ngModel)]="post.last_used" name="Last_used" placeholder='' #Last_used="ngModel">
+                              </ion-input>
+                            </ion-item>
+                            <div [hidden]="Last_used.valid || Last_used.pristine" class="alert-danger">
+
+                              The Last used date is required
+
+                            </div>
+                          </div>
+
+                          <div class="container" id="grad">
+                            <div [hidden]="submitted">
+                              <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+                                <div class="form-group">
+                                  <ion-item>
+                                    <ion-label position="floating" for="Origin">Origin</ion-label>
+                                    <ion-input type="text" class="form-control" id="Origin" required
+                                      [(ngModel)]="post.origin" name="Origin" placeholder='' #Origin="ngModel">
+                                    </ion-input>
+                                  </ion-item>
+                                  <div [hidden]="Origin.valid || Origin.pristine" class="alert-danger">
+
+                                    The skill's origin is required
+
+                                  </div>
+                                </div>
+
+                                <div class="container" id="grad">
+                                  <div [hidden]="submitted">
+                                    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+                                      <div class="form-group">
+                                        <ion-item>
+                                          <ion-label position="floating" for=">Months_of_active_experience">Months of
+                                            active experience</ion-label>
+                                          <ion-input type="text" class="form-control" id="Months_of_active_experience"
+                                            required [(ngModel)]="post.months_active" name="Months_of_active_experience"
+                                            placeholder='' #Months_of_active_experience="ngModel"></ion-input>
+                                        </ion-item>
+                                        <div
+                                          [hidden]="Months_of_active_experience.valid || Months_of_active_experience.pristine"
+                                          class="alert-danger">
+
+                                          The months of active experiance with the skill is required
+
+                                        </div>
+                                      </div>
+
+                                      <div class="container" id="grad">
+                                        <div [hidden]="submitted">
+                                          <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+                                            <div class="form-group">
+                                              <ion-item>
+                                                <ion-label position="floating" for=">developing_skill">Are you currently
+                                                  developing skill?</ion-label>
+                                                <ion-input type="text" class="form-control" id="developing_skill"
+                                                  required [(ngModel)]="post.developing" name="developing_skill"
+                                                  placeholder='' #developing_skill="ngModel"></ion-input>
+                                              </ion-item>
+                                              <div [hidden]="developing_skill.valid || developing_skill.pristine"
+                                                class="alert-danger">
+
+                                                Are you currently developing skill? (Y/N)
+
+                                              </div>
+                                            </div>
+
+                                            <ion-content padding class="background">
+
+                                              <ion-row style="height: 100px"></ion-row>
+
+
+                                            </ion-content>
+                                            <!---   </ion-list>
+
+    </div>
+  </div>
+
+</ion-content> -->

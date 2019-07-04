@@ -1,57 +1,27 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
-  {
-    path: 'tabs',
-    component: TabsPage,
-    children: [
-      {
-        path: 'tab1',
-        children: [
-          {
-            path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
-          }
+{
+path: '',
+
+component: TabsPage,
+children: [
+{ path: 'profile', loadChildren: '../profile/profile.module#ProfilePageModule' },
+{ path: 'skills', loadChildren: '../skills/skills.module#SkillsPageModule' },
+{ path: 'info', loadChildren: '../info/info.module#InfoPageModule' },
+{ path: 'projects', loadChildren: '../projects/projects.module#ProjectsPageModule' },
+{ path: 'edit-profile', loadChildren: '../edit-profile/edit-profile.module#EditProfilePageModule' },
+{ path: 'members', loadChildren: '../members/members.module#MembersPageModule' },
+
+// tslint:disable-next-line: indent
         ]
-      },
-      {
-        path: 'tab2',
-        children: [
-          {
-            path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
-          }
-        ]
-      },
-      {
-        path: 'tab3',
-        children: [
-          {
-            path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
-          }
-        ]
-      },
-      {
-        path: '',
-        redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
-      }
-    ]
-  },
-  {
-    path: '',
-    redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
-  }
+    }
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forChild(routes)
-  ],
-  exports: [RouterModule]
+imports: [RouterModule.forChild(routes)],
+exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsRoutingModule { }
