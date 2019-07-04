@@ -96,13 +96,13 @@
             </div>
           </div>
 
-          <ion-item>
+          <div class="d-flex justify-content-end">
             <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="square"
               (click)="presentAlertConfirm()" (click)="createPost()" size="medium" (click)="updateDetails()"
               [disabled]="!heroForm.valid">
               Update
             </ion-button>
-          </ion-item>
+          </div>
         </form>
       </div>
   </ion-list>

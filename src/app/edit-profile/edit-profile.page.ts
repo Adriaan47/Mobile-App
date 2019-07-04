@@ -110,7 +110,6 @@ if (this.username !== this.users.getUsername()) {
 await this.users.updateEmail(this.username);
 this.mainuser.update({
 username: this.username,
-
 });
 }
 
@@ -162,7 +161,6 @@ await alert.present();
     await alert.present();
   }
 
-  
 
 updateProfilePicture() {
     this.fileBtn.nativeElement.click();

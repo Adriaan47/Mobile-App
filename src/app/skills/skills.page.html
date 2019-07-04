@@ -1,106 +1,119 @@
 <ion-header>
-  <ion-toolbar>
-     <ion-icon routerLink="/tabs/skills" size="large"  (click) = "edit()" slot="end" name="add-circle" slot="end" color= "other">
-    </ion-icon>
-    <ion-buttons slot="start">
-      <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Skills</ion-title>
+  <ion-toolbar routerLink="/tabs/info">
+    <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/info" size="large"></ion-icon>
+    <ion-title>Add skill</ion-title>
   </ion-toolbar>
-  <!-- <ion-searchbar color="stable"></ion-searchbar> -->
 </ion-header>
 
 <ion-content padding class="background">
+  <ion-item>
+    <div class="container" id="grad">
 
-  <ion-list>
+      <form (ngSubmit)="CreateSkill(heroForm1)" #heroForm1="ngForm">
 
-
-        <ion-card class="card" *ngFor="let skil of skills; index as i">
-          <ion-item class="card-header" id="headingOne">
-            <h5 class="mb-0">
-              <a class="btn btn-link" data-toggle="collapse" attr.data-target="#collapse{{ i }}" aria-expanded="false" aria-controls="collapseOne">
-                <div class="row">
-                  <div class="col" *ngIf="skil">
-                    {{ skil.name | titlecase  }}
-                  </div>
-                  <div class="col">
-                    <ion-label slot="end" class="text-sm-right text-primary m-2">
-                     {{ skil.level }}
-                    </ion-label>
-                  </div>
-
-                  <div class="col-md-0">
-                    <a class="editIcon text-secondary" (click)="onEditSkill(skil.id)" href="#addskill" data-toggle="tab"
-                      href="#public" id="public-tab" aria-controls="public" role="tab">
-                      <i class="fas fa-trash-alt fa-2x m-2 " style="font-size:20px;"></i>
-                    </a>
-                  </div>
-
-                  <div class="col-md-1">
-                    <a class="editIcon text-primary" data-toggle="tab" href="#public" id="public-tab"
-                      aria-controls="public" role="tab">
-                      <i class="fas fa-pencil-alt fa-2x m-2" style="font-size:20px;"></i>
-                    </a>
-                  </div>
-                </div>
-              </a>
-            </h5>
+        <div class="form-group">
+          <ion-item>
+            <ion-label color=dark position="floating" for="Skill_name">Skill</ion-label>
+            <ion-input type="text" class="form-control" placeholder=" " id="name" required [(ngModel)]="name"
+              name="name" #Skill_name="ngModel"></ion-input>
           </ion-item>
+          <div [hidden]="Skill_name.valid || Skill_name.pristine" class="alert-danger">
 
-          <div id="collapse{{ i }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" *ngIf="skil">
-            <div class="card-body">
-              <div class="info">
-                <span class="font-weight-bold">Origin: </span>
-                {{ skil.origin | titlecase  }}
-              </div>
-              <br />
-              <div class="info">
-                <span class="font-weight-bold">skill Level: </span>
-                {{ skil.level }}
-              </div>
-              <br />
-              <div class="info">
-                <span class="font-weight-bold">Last Used: </span>
-                {{ skil.lastUsed | date }}
-              </div>
-              <br />
-              <div class="info">
-                <span class="font-weight-bold">Months of Active Experience:
-                </span>
-                {{ skil.activeExperience }}
-              </div>
-              <br />
-              <div class="info">
-                <span class="font-weight-bold">Are you actively developing this skill further ?
-                </span>
-                {{ skil.active | titlecase }}
-              </div>
-              <br />
-            </div>
-            <ion-item>
-              <ion-icon name="md-create" size="large" color="dark" routerLink="/edit-details" slot="end"></ion-icon>
-              <ion-icon name="trash" size="large" color="dark" slot="end" (click)="deleteSkill(skil.id)"></ion-icon>
-            </ion-item>
+            Skill is required
 
           </div>
-        </ion-card>
-
-  </ion-list>
+        </div>
 
 
-<ion-list>
-    <ion-list *ngFor="let skil of skills; index as i">
-        <ion-item-group>
-          <ion-item-divider>
-            <ion-label>{{ skil.name }}</ion-label>
-            <ion-note slot="end" color="primary"> Level {{ skil.level }}</ion-note>
-          </ion-item-divider>
-        </ion-item-group>
-      </ion-list>
-  </ion-list>
+        <div class="form-group">
 
+          <ion-item>
+            <ion-label color=dark position="floating" for="Skill_level">Skill level (1 - 10)</ion-label>
+            <ion-input type="text" class="form-control" placeholder=" " required pattern="[01-9]{0,2}" id="level"
+              [(ngModel)]="level" name="level" #Skill_level="ngModel">
+            </ion-input>
+          </ion-item>
+          <div [hidden]="Skill_level.valid || Skill_level.pristine" class="alert-danger">
+
+            Please enter a number between 1 - 10
+
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <ion-item>
+            <ion-label color=dark position="floating" for="last_Used">Date last used</ion-label>
+            <ion-datetime class="form-control" placeholder=" " id="lastUsed" required [(ngModel)]="lastUsed"
+              name="lastUsed" #last_Used="ngModel" display-format="DD MMM YYYY"></ion-datetime>
+          </ion-item>
+          <div [hidden]="last_Used.valid || last_Used.pristine" class="alert-danger">
+
+            Date last used is required
+
+          </div>
+        </div>
+
+
+
+        <div class="form-group">
+          <ion-item>
+            <ion-label color=dark position="floating" for="Origin">Origin</ion-label>
+            <ion-select class="form-control" placeholder=" " id="origin" required [(ngModel)]="origin" name="origin"
+              #Origin="ngModel">
+              <ion-select-option value="University">Tertiary</ion-select-option>
+              <ion-select-option value="Online course">Online course</ion-select-option>
+              <ion-select-option value="Self-study">Self-study</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <div [hidden]="Origin.valid || Origin.pristine" class="alert-danger">
+
+            Skill origin is required
+
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <ion-item>
+            <ion-label color=dark position="floating" for="active_Experience">Months of active experience</ion-label>
+            <ion-input type="text" class="form-control" placeholder=" " id="activeExperience" required
+              [(ngModel)]="activeExperience" name="activeExperience" #active_Experience="ngModel">
+            </ion-input>
+          </ion-item>
+          <div [hidden]="active_Experience.valid || active_Experience.pristine" class="alert-danger">
+
+            Months of active experience is required
+
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <ion-item>
+            <ion-label color=dark position="floating" for="active_dev">Are you
+              currently developing this skill?
+            </ion-label>
+            <ion-select class="form-control" placeholder=" " id="active" required [(ngModel)]="active" name="active"
+              #active_dev="ngModel">
+              <ion-select-option value="yes" selected="true">Yes</ion-select-option>
+              <ion-select-option value="no">No</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <div [hidden]="active_dev.valid || active_dev.pristine" class="alert-danger">
+
+            This option is required
+
+          </div>
+        </div>
+        <!-- <span> {{ heroForm1.value | json }} </span> -->
+        <ion-item>
+          <ion-button style="text-transform: none;" id="buttonColor" type="submit" shape="square" size="medium"
+            slot="end" [disabled]="!heroForm1.form.valid">
+            Add skill</ion-button>
+        </ion-item>
+      </form>
+
+    </div>
+  </ion-item>
 </ion-content>
-
-
- 
-

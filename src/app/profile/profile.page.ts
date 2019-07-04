@@ -1,4 +1,3 @@
-
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
@@ -34,7 +33,6 @@ export class ProfilePage implements OnInit {
     this.sub = this.mainuser.valueChanges().subscribe(event => {
       this.profilePic = event.profilePic;
     });
-
     this.getDp();
   }
 
