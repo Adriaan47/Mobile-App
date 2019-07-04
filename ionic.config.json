@@ -1,7 +1,5 @@
 {
-  "name": "project info platform",
-  "integrations": {
-    "cordova": {}
-  },
+  "name": "Ionic_Mobile_Application",
+  "integrations": {},
   "type": "angular"
 }

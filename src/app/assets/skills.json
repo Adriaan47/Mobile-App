@@ -1,0 +1,62 @@
+{
+    "data":[
+        {
+            "project": "Java",
+            "children" :[
+                {
+                "Skill": "Java",
+                "Level": "8",
+                "Date_last_used": "2019/07/18",
+                "Origin": "Tertiary",
+                "Months": "0",
+                "DevelopingSkill": "No"
+                
+            }
+            ]
+        },
+        {
+            "project": "JavaScript",
+            "children" :[
+                {
+                "Skill": "Java",
+                "Level": "8",
+                "Date_last_used": "2019/07/18",
+                "Origin": "Tertiary",
+                "Months": "0",
+                "DevelopingSkill": "No"
+                
+            }
+            ]
+        },
+        {
+            "project": "SQL",
+            "children" :[
+                {
+                "Skill": "Java",
+                "Level": "8",
+                "Date_last_used": "2019/07/18",
+                "Origin": "Tertiary",
+                "Months": "0",
+                "DevelopingSkill": "No"
+                
+            }
+            ]
+        },
+        {
+            "project": "Ionic Frame work",
+            "children" :[
+                {
+                "Skill": "Java",
+                "Level": "8",
+                "Date_last_used": "2019/07/18",
+                "Origin": "Tertiary",
+                "Months": "0",
+                "DevelopingSkill": "No"
+                
+            }
+            ]
+        }
+
+        
+    ]
+}

@@ -1,4 +1,3 @@
-
 import 'bootstrap';
 import { catchError, map } from 'rxjs/operators';
 import { UsersService } from 'src/app/services/users.service';
@@ -10,6 +9,7 @@ import {Users } from '../services/users.interface';
 import { DataService } from '../services/data.service';
 import { MemberinfoComponent } from './memberinfo/memberinfo.component';
 import { User } from 'firebase';
+import { Subject, combineLatest } from 'rxjs';
 
 
 
@@ -21,63 +21,59 @@ import { User } from 'firebase';
 })
 export class MembersPage implements OnInit {
 
-// tslint:disable-next-line: no-inferrable-types
-  public searchTerm: string = '';
-  public items: any;
-// tslint:disable-next-line: no-inferrable-types
-  private url: string = 'http://localhost:3000/users';
-  mainuser: AngularFirestoreDocument;
-profilePic: string;
-sub;
+searchTerm: string;
 data: any;
-user: Users[];
-UserID: Users;
-queryText: string;
-res: any;
-uid: any;
 
-  constructor(
-    private dataService: DataService,
-    private alertCtrl: AlertController,
-    private users: UsersService,
-    private http: HttpClient,
-    private afs: AngularFirestore,
-    public popoverController: PopoverController) {
-      this.mainuser = afs.doc(`users/${this.users.getUID()}`);
-      this.sub = this.mainuser.valueChanges().subscribe(event => {
-      this.profilePic = event.profilePic;
-  });
-      this.getMessage();
-      this.getDp();
-    }
+startAt = new Subject();
+endAt = new Subject();
 
-  ngOnInit() {
-    this.uid = this.users.getUID();
-    this.users.getDatas(this.uid).subscribe((res: Users[]) => {
-      this.user = res;
-      console.log(res);
-   });
-  }
-  getMessage() {
-    this.users.getData().subscribe(data => this.data = data);
-  }
+users: any[];
+allUsers: any[] = [];
 
-  getDp() {
-    this.users.getProfilePicture(this.users.getUID()).subscribe((res) => {
-      this.data = res;
-      console.log(res);
-    });
-  }
+startobs = this.startAt.asObservable();
+endobs = this.endAt.asObservable();
 
-  async notifications() {
-    const popover = await this.popoverController.create({
-      component: MemberinfoComponent,
-      animated: true,
-      showBackdrop: true
-    });
-    return await popover.present();
-  }
-  async DismissClick() {
-    await this.popoverController.dismiss();
-  }
+constructor(private afs: AngularFirestore, private user: UsersService) {
+  this.getAll();
+ }
+
+ngOnInit() {
+this.getAllMembers().subscribe((users) => {
+users.forEach((user): any => {
+this.allUsers.push(user);
+return this.allUsers;
+});
+
+});
+combineLatest(this.startobs, this.endobs).subscribe(value => {
+this.fireQuery(value[0], value[1]).subscribe(users => {
+this.users = users;
+console.log(users);
+});
+}
+);
+console.log(this.allUsers, this.users);
+}
+
+fireQuery(start, end) {
+return this.afs.collection('users', ref => ref.limit(8).orderBy('name')
+.startAt(start).endAt(end)).valueChanges();
+}
+getAll() {
+  this.user.getData().subscribe(data => this.data = data);
+}
+getAllMembers() {
+return this.afs.collection('users').valueChanges();
+}
+
+search($event) {
+const q = $event.target.value;
+if (q !== '') {
+this.startAt.next(q);
+this.endAt.next(q + '\uf8ff');
+} else {
+this.users = this.allUsers;
+}
+}
+
 }

@@ -7,6 +7,8 @@ import { UsersService } from '../services/users.service';
 import { UserService } from '../user.service';
 
 
+
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -85,3 +87,4 @@ export class ProfilePage implements OnInit {
   }
 
 }
+

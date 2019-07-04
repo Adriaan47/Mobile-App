@@ -42,7 +42,8 @@ getName(): string {
       getDatas(id: string): Observable<Object> {
         return this.http.get(`http://localhost:3000/users/${id}`);
       }
-    
+
+
 
 reAuth(username: string, password: string) {
 return this.afAuth.auth.currentUser.reauthenticateWithCredential(auth.EmailAuthProvider.credential(username, password));

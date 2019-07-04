@@ -64,5 +64,28 @@ export class EditDetailsPage implements OnInit {
     this.router.navigate(['/tabs/info']);
   }
 
+
+async presentAlertConfirm() {
+// this.router.navigate(['/tabs/profile']);
+// }
+const alert = await this.alertCtrl.create({
+header: 'Update successful',
+message: 'Your profile has been updated',
+buttons: [
+{
+text: 'OK',
+handler: () => {
+this.router.navigate(['/tabs/profile']);
+this.refresh();
 }
 
+}
+]
+// tslint:disable-next-line: semicolon
+});
+await alert.present();
+}
+refresh(): void {
+  window.location.reload();
+}
+}

@@ -128,13 +128,39 @@ buttons: [
 text: 'OK',
 handler: () => {
 this.router.navigate(['/tabs/profile']);
+this.refresh();
 }
+
 }
 ]
 // tslint:disable-next-line: semicolon
 });
 await alert.present();
 }
+ async presentAlertBack() {
+    const alert = await this.alertCtrl.create({
+      header: 'Discard changes?',
+      message: 'Any unsaved work will be discarded.',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: ?');
+          }
+        }, {
+          text: 'Yes',
+          handler: () => {
+            this.router.navigate(['tabs/profile']);
+          }
+        }
+      ]
+  // tslint:disable-next-line: semicolon
+    });
+    await alert.present();
+  }
+
 
 updateProfilePicture() {
     this.fileBtn.nativeElement.click();
@@ -160,5 +186,9 @@ updateProfilePicture() {
     })
     )
     ).subscribe();
+    }
+
+    refresh(): void {
+        window.location.reload();
     }
 }

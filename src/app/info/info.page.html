@@ -25,7 +25,7 @@
                 aria-controls="collapseOne">
                 <div class="row">
                   <div class="col">
-                    {{ skil.name | titlecase  }}
+                    {{ skil.name }}
                   </div>
                   <div class="col">
                     <ion-label slot="end" class="text-sm-right text-primary m-2">
@@ -55,7 +55,7 @@
             <div class="card-body">
               <div class="info">
                 <span class="font-weight-bold">Origin: </span>
-                {{ skil.origin | titlecase  }}
+                {{ skil.origin }}
               </div>
               <br />
               <div class="info">
@@ -77,13 +77,13 @@
               <div class="info">
                 <span class="font-weight-bold">Are you actively developing this skill further ?
                 </span>
-                {{ skil.active | titlecase }}
+                {{ skil.active}}
               </div>
               <br />
             </div>
             <ion-item>
-              <ion-icon name="md-create" size="large" color="dark" routerLink="/edit-details" slot="end"></ion-icon>
-              <ion-icon name="trash" size="large" color="dark" slot="end"></ion-icon>
+              <ion-icon name="md-create" size="large" color="dark" [routerLink]="['/edit-details', skil.id]" slot="end"></ion-icon>
+              <ion-icon name="trash" size="large" color="dark" slot="end" (click)="deleteSkill(skil.id)"></ion-icon>
             </ion-item>
 
           </div>

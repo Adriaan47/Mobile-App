@@ -38,7 +38,6 @@ export class InfoPage implements OnInit {
     private alertCtrl: AlertController,
     public popoverController: PopoverController,
         ) {
-    this.getSkills();
 
     }
 
@@ -53,9 +52,6 @@ export class InfoPage implements OnInit {
   });
   }
 
- getSkills() {
-    this.users.getSkills(this.users.getUID()).subscribe(skills => this.skills = skills);
-  }
 
     async presentAlertConfirm() {
       const alert = await this.alertCtrl.create({
@@ -131,5 +127,3 @@ deleteSkill(id: string) {
 }
 
 }
-
-
