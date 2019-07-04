@@ -65,16 +65,16 @@ export class EditDetailsPage implements OnInit {
   }
 
 
-async presentAlertConfirm() {
+async presentAlertConfirm() {
 // this.router.navigate(['/tabs/profile']);
 // }
-const alert = await this.alertCtrl.create({
-header: 'Update successful',
-message: 'Your profile has been updated',
+const alert = await this.alertCtrl.create({
+header: 'Update successful',
+message: 'Your profile has been updated',
 buttons: [
 {
-text: 'OK',
-handler: () => {
+text: 'OK',
+handler: () => {
 this.router.navigate(['/tabs/profile']);
 this.refresh();
 }
@@ -83,10 +83,9 @@ this.refresh();
 ]
 // tslint:disable-next-line: semicolon
 });
-await alert.present();
+await alert.present();
 }
 refresh(): void {
   window.location.reload();
 }
 }
-

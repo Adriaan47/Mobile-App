@@ -82,7 +82,7 @@
               <br />
             </div>
             <ion-item>
-              <ion-icon name="md-create" size="large" color="dark" routerLink="/edit-details" slot="end"></ion-icon>
+              <ion-icon name="md-create" size="large" color="dark" [routerLink]="['/edit-details', skil.id]" slot="end"></ion-icon>
               <ion-icon name="trash" size="large" color="dark" slot="end" (click)="deleteSkill(skil.id)"></ion-icon>
             </ion-item>
 

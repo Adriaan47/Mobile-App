@@ -55,8 +55,8 @@ export class UsersService {
 
 
 
-        getCurrentUserSkill(uid: string, skill: Skills): Observable<Skills> {
-          return this.http.get<Skills>(this.skillUrl + `/${uid}skill/${skill.id}`);
+        getCurrentUserSkill(uid: string, sid: string): Observable<Skills> {
+          return this.http.get<Skills>(`http://localhost:3000/users/skills/${uid}/skill/${sid}`);
           }
 
       getData(): Observable<Object> {
