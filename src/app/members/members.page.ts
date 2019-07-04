@@ -1,4 +1,3 @@
-
 import 'bootstrap';
 import { catchError, map } from 'rxjs/operators';
 import { UsersService } from 'src/app/services/users.service';
@@ -23,6 +22,7 @@ import { Subject, combineLatest } from 'rxjs';
 export class MembersPage implements OnInit {
 
 searchTerm: string;
+data: any;
 
 startAt = new Subject();
 endAt = new Subject();
@@ -33,7 +33,9 @@ allUsers: any[] = [];
 startobs = this.startAt.asObservable();
 endobs = this.endAt.asObservable();
 
-constructor(private afs: AngularFirestore) { }
+constructor(private afs: AngularFirestore, private user: UsersService) {
+  this.getAll();
+ }
 
 ngOnInit() {
 this.getAllMembers().subscribe((users) => {
@@ -57,7 +59,9 @@ fireQuery(start, end) {
 return this.afs.collection('users', ref => ref.limit(8).orderBy('name')
 .startAt(start).endAt(end)).valueChanges();
 }
-
+getAll() {
+  this.user.getData().subscribe(data => this.data = data);
+}
 getAllMembers() {
 return this.afs.collection('users').valueChanges();
 }

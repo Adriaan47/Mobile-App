@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/members" size="large"></ion-icon>
+    <ion-title>Member's details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  padding class="background">
+
+  <!-- <ion-list>
+    <ion-item>
+      {{ res.name }}
+    </ion-item>
+  </ion-list> -->
+
+   
+<ion-list >
+    <ion-list>
+        <ion-item-group>
+          <ion-item-divider>
+            <ion-label>{{ res.name | titlecase }} {{ res.surname | titlecase }} </ion-label>
+          </ion-item-divider>
+          <ion-item-divider>
+              <ion-label>Career level : {{ res.careerLevel }}</ion-label>
+            </ion-item-divider>
+        </ion-item-group>
+      </ion-list>
+  </ion-list>
+
+</ion-content>

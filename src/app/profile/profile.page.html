@@ -21,7 +21,7 @@
       <ion-label>
         <ion-label position="floating">Nickname & Surname</ion-label>
         <ion-input class="one" disable="true" readonly="true" [(ngModel)]="name"
-          placeholder='{{res.nickname | titlecase }} {{res.surname | titlecase}}'></ion-input>
+          placeholder='{{res.nickname}} {{res.surname | titlecase}}'></ion-input>
       </ion-label>
     </ion-item>
 
@@ -37,13 +37,13 @@
       <div class="profile-info">
         <ion-item *ngIf="res">
           <ion-label position="floating">First name(s)</ion-label>
-          <ion-input disable="false" color="dark" placeholder=''>{{ res.name | titlecase  }}</ion-input>
+          <ion-input disable="false" color="dark" placeholder=''>{{ res.name }}</ion-input>
         </ion-item>
       </div>
       <div class="profile-info">
         <ion-item *ngIf="res">
           <ion-label position="floating">Surname</ion-label>
-          <ion-input disable="false" color="dark" placeholder=''>{{ res.surname  | titlecase }}</ion-input>
+          <ion-input disable="false" color="dark" placeholder=''>{{ res.surname }}</ion-input>
         </ion-item>
       </div>
 
