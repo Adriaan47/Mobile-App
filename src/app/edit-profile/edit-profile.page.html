@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar routerLink="/tabs/profile">
-    <ion-icon routerLink="/tabs/profile" slot="start" name="arrow-round-back" size="large" size="large"></ion-icon>
+  <ion-toolbar>
+    <ion-icon (click)="presentAlertBack()" slot="start" name="arrow-round-back" size="large" size="large"></ion-icon>
     <ion-title>Edit profile</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -19,7 +19,7 @@
     </ion-thumbnail>
         <ion-label>
       <ion-label class="StartPadding1" position="floating">First name & Surname</ion-label>
-      <ion-input class="StartPadding2" position="floating" placeholder="{{name | titlecase }} {{surname | titlecase}}">
+      <ion-input class="StartPadding2" position="floating" placeholder="{{name }} {{surname }}">
       </ion-input>
     </ion-label>
 

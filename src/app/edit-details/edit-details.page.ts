@@ -75,7 +75,7 @@ buttons: [
 {
 text: 'OK',
 handler: () => {
-this.router.navigate(['/tabs/profile']);
+this.router.navigate(['/tabs/info']);
 this.refresh();
 }
 
@@ -84,6 +84,29 @@ this.refresh();
 // tslint:disable-next-line: semicolon
 });
 await alert.present();
+}
+async presentAlertDiscard() {
+  const alert = await this.alertCtrl.create({
+    header: 'Discard changes?',
+    message: 'Are you sure you want to discard changes?',
+    buttons: [
+      {
+        text: 'No',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: (blah) => {
+          console.log('Confirm Cancel: ?');
+        }
+      }, {
+        text: 'Yes',
+        handler: () => {
+          this.router.navigate(['/tabs/info']);
+        }
+      }
+    ]
+// tslint:disable-next-line: semicolon
+  });
+  await alert.present();
 }
 refresh(): void {
   window.location.reload();

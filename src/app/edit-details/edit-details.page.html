@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/info" size="large"></ion-icon>
+    <ion-icon (click)="presentAlertDiscard()" slot="start" name="arrow-round-back" size="large" size="large"></ion-icon>
     <ion-title>Update skill</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -80,7 +80,7 @@
 
       <ion-item lines="none">
         <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="square" size="medium"
-          (click)="UpdateSkills()" [disabled]="!heroForm.valid">
+          (click)="UpdateSkills()" (click)="presentAlertConfirm()" [disabled]="!heroForm.valid">
           Update
         </ion-button>
 

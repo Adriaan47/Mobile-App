@@ -122,6 +122,7 @@ deleteSkill(id: string) {
   this.users.deleteSkill(this.users.getUID(), id ).subscribe((res) => {
     this.res = res;
     console.log(res);
+    this.presentAlertConfirmDelete();
 
   });
 }

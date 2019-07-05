@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar routerLink="/tabs/info">
-    <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/info" size="large"></ion-icon>
+  <ion-toolbar >
+    <ion-icon (click)="presentAlertBack()" slot="start" name="arrow-round-back" size="large"  size="large"></ion-icon>
     <ion-title>Add skill</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -26,21 +26,21 @@
 
 
         <div class="form-group">
-            <ion-item lines="none">
-              <ion-label color=dark position="floating" for="Origin">Origin</ion-label>
-              <ion-select class="form-control" placeholder=" " id="origin" required [(ngModel)]="origin" name="origin"
-                #Origin="ngModel">
-                <ion-select-option value="University">Tertiary</ion-select-option>
-                <ion-select-option value="Online course">Online course</ion-select-option>
-                <ion-select-option value="Self-study">Self-study</ion-select-option>
-              </ion-select>
-            </ion-item>
-            <div [hidden]="Origin.valid || Origin.pristine" class="alert-danger">
-  
-              Skill origin is required
-  
-            </div>
+          <ion-item lines="none">
+            <ion-label color=dark position="floating" for="Origin">Origin</ion-label>
+            <ion-select class="form-control" placeholder=" " id="origin" required [(ngModel)]="origin" name="origin"
+              #Origin="ngModel">
+              <ion-select-option value="University">Tertiary</ion-select-option>
+              <ion-select-option value="Online course">Online course</ion-select-option>
+              <ion-select-option value="Self-study">Self-study</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <div [hidden]="Origin.valid || Origin.pristine" class="alert-danger">
+
+            Skill origin is required
+
           </div>
+        </div>
 
         <div class="form-group">
 
@@ -73,7 +73,7 @@
 
 
 
-        
+
 
 
         <div class="form-group">
@@ -110,8 +110,8 @@
         </div>
         <!-- <span> {{ heroForm1.value | json }} </span> -->
         <ion-item lines="none">
-          <ion-button style="text-transform: none;" id="buttonColor" type="submit" shape="square" size="medium"
-            slot="end" [disabled]="!heroForm1.form.valid">
+          <ion-button style="text-transform: none;" id="buttonColor" (click)="presentAlertConfirm1()" type="submit"
+            shape="square" size="medium" slot="end" [disabled]="!heroForm1.form.valid">
             Add skill</ion-button>
         </ion-item>
       </form>
