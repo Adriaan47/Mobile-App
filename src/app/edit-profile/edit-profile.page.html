@@ -9,23 +9,22 @@
 <ion-content padding class="background">
 
   <input type="file" #fileBtn name="image" #image (change)="uploadImg(image)" class="filebtn" />
-  <div>
-    <ion-item>
-      <ion-row style="height: 20px"></ion-row>
-      <ion-thumbnail slot="start">
-        <ion-avatar class="item item-avatar">
-          <img src="{{ avatar }}" (click)="updateProfilePicture()">
-        </ion-avatar>
-      </ion-thumbnail>
 
-      <ion-label>
 
-        <ion-label position="floating">{{name}} {{surname | titlecase}}</ion-label>
-        <ion-input disable="true" readonly="true"></ion-input>
+  <ion-item lines="none">
+    <ion-thumbnail slot="start">
+      <ion-avatar class="item item-avatar">
+        <img src="{{ avatar }}" (click)="updateProfilePicture()">
+      </ion-avatar>
+    </ion-thumbnail>
+        <ion-label>
+      <ion-label class="StartPadding1" position="floating">First name & Surname</ion-label>
+      <ion-input class="StartPadding2" position="floating" placeholder="{{name | titlecase }} {{surname | titlecase}}">
+      </ion-input>
+    </ion-label>
 
-      </ion-label>
-    </ion-item>
-  </div>
+  </ion-item>
+
 
 
   <ion-list>

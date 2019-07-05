@@ -7,7 +7,7 @@
 
 <ion-content padding class="background">
 
-<ion-item>
+<ion-item lines="none">
   <div class="container" id="grad">
 
 
@@ -15,7 +15,7 @@
     <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
 
       <div class="form-group">
-        <ion-item>
+        <ion-item lines="none">
           <ion-label position="floating" for="Skill_level">Skill level</ion-label>
           <ion-input type="text" class="form-control" id="level" placeholder=" " required [(ngModel)]="level"
             name="level" #Skill_level="ngModel"> </ion-input>
@@ -29,7 +29,7 @@
 
 
       <div class="form-group">
-        <ion-item>
+        <ion-item lines="none">
           <ion-label color=dark position="floating" for="Date_last_used">Date last used</ion-label>
           <ion-datetime class="form-control" id="lastUsed" placeholder=" " required [(ngModel)]="lastUsed"
             name="lastUsed" display-format="DD MMM YYYY" placeholder=' ' #Date_last_used="ngModel"
@@ -45,7 +45,7 @@
 
 
       <div class="form-group">
-        <ion-item>
+        <ion-item lines="none">
           <ion-label color=dark position="floating" for="Months_of_active_experience">Months
             of active experience</ion-label>
           <ion-input type="text" class="form-control" id="activeExperience" placeholder=" " required
@@ -61,9 +61,8 @@
 
 
       <div class="form-group">
-        <ion-item>
-          <ion-label color=dark position="floating" for="Developing_skill">Are you
-            currently developing this skill?
+        <ion-item lines="none">
+          <ion-label color=dark position="floating" for="Developing_skill">Developing skill?
           </ion-label>
           <ion-select class="form-control" id="active" placeholder=" " required [(ngModel)]="active" name="active"
             #Developing_skill="ngModel">
@@ -79,7 +78,7 @@
         </div>
       </div>
 
-      <ion-item>
+      <ion-item lines="none">
         <ion-button style="text-transform: none;" slot="end" id="buttonColor" shape="square" size="medium"
           (click)="UpdateSkills()" [disabled]="!heroForm.valid">
           Update

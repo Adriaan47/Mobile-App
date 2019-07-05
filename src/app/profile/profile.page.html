@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-icon name="md-create" slot="end" size="large" routerLink="/tabs/edit-profile"></ion-icon>
     <ion-buttons slot="start">
@@ -44,6 +44,98 @@
         <ion-item *ngIf="res">
           <ion-label position="floating">Surname</ion-label>
           <ion-input disable="false" color="dark" placeholder=''>{{ res.surname }}</ion-input>
+        </ion-item>
+      </div>
+
+      <div class="profile-info">
+        <ion-item *ngIf="res">
+          <ion-label position="floating">Career level</ion-label>
+          <ion-input disable="true" color="dark" placeholder=''>{{ res.careerLevel }}</ion-input>
+        </ion-item>
+      </div>
+
+      <div class="profile-info">
+        <ion-item *ngIf="res">
+          <ion-label position="floating">Mobile number</ion-label>
+          <ion-input disable="true" color="dark" placeholder=''>{{ res.mobile }}</ion-input>
+        </ion-item>
+      </div>
+
+      <div class="profile-info">
+        <ion-item *ngIf="res">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input disable="true" placeholder=''>{{ res.email }}</ion-input>
+        </ion-item>
+      </div>
+
+
+    </div>
+
+  </ion-list>
+
+
+</ion-content> -->
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="md-create" slot="end" size="large" routerLink="/tabs/edit-profile"></ion-icon>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding class="background">
+
+  <ion-list id="profile-info" *ngIf="res">
+
+
+
+    <ion-item lines="none">
+
+
+      <ion-thumbnail slot="start">
+        <ion-avatar class="item item-avatar">
+          <img src="{{ data.avatar }}">
+        </ion-avatar>
+      </ion-thumbnail>
+
+
+
+
+      <ion-label class="StartPadding1" position="floating">Nickname & Surname</ion-label>
+      <ion-input class="StartPadding2" disable="true" readonly="true" [(ngModel)]="name"
+        placeholder='{{res.nickname | titlecase }} {{res.surname | titlecase}}'></ion-input>
+
+
+
+
+
+    </ion-item>
+
+
+    <div *ngIf="res">
+      <div>
+        <ion-item>
+          <ion-label position="floating">Enterprise ID</ion-label>
+          <ion-input disable="false" color="dark" placeholder=''>{{res.name | lowercase}}.{{res.surname | lowercase}}
+          </ion-input>
+        </ion-item>
+      </div>
+
+      <div class="profile-info">
+        <ion-item *ngIf="res">
+          <ion-label position="floating">First name(s)</ion-label>
+          <ion-input disable="false" color="dark" placeholder=''>{{ res.name | titlecase  }}</ion-input>
+        </ion-item>
+      </div>
+      <div class="profile-info">
+        <ion-item *ngIf="res">
+          <ion-label position="floating">Surname</ion-label>
+          <ion-input disable="false" color="dark" placeholder=''>{{ res.surname  | titlecase }}</ion-input>
         </ion-item>
       </div>
 

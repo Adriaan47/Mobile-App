@@ -51,4 +51,5 @@ export class UserDetailsPage implements OnInit {
     this.rout.navigate(['tabs/members']);
   }
 
+
 }

@@ -41,9 +41,21 @@ ion-title {
   text-align: center;
 }
 
-.item-avatar  {     
-  width:120% !important;  
-  height : 120% !important;  
+.item-avatar  {
+  width:120% !important;
+  height : 120% !important;
   max-width: 120px !important;  //any size
-  max-height: 120px !important; //any size 
-}
+  max-height: 120px !important; //any size
+  }
+  StartPadding1{
+    padding-start: 40px;
+  }
+  .StartPadding2{
+    padding-start: 20px;
+  }
+  .TopPadding{
+    padding-top: 16px;
+  }
+
+ 
+

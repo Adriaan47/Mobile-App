@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
-      <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/members" size="large"></ion-icon>
+    <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/members" size="large"></ion-icon>
     <ion-title>Member's details</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content  padding class="background">
+<ion-content padding class="background">
 
   <!-- <ion-list>
     <ion-item>
@@ -13,18 +13,54 @@
     </ion-item>
   </ion-list> -->
 
-   
-<ion-list >
-    <ion-list>
-        <ion-item-group>
-          <ion-item-divider>
-            <ion-label>{{ res.name | titlecase }} {{ res.surname | titlecase }} </ion-label>
-          </ion-item-divider>
-          <ion-item-divider>
-              <ion-label>Career level : {{ res.careerLevel }}</ion-label>
-            </ion-item-divider>
-        </ion-item-group>
-      </ion-list>
+
+
+
+  <!--         
+      <ion-thumbnail slot="start">
+        <ion-avatar class="item item-avatar"> <img class="item-avatar" src="{{ dp.avatar }}">
+        </ion-avatar>
+      </ion-thumbnail>
+     
+    -->
+
+
+<ion-list>
+
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>{{ res.name | titlecase }} {{ res.surname | titlecase }} </ion-label>
+      </ion-item-divider>
+    </ion-item-group>
   </ion-list>
 
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Career level </ion-label>
+        <ion-input readonly>{{ res.careerLevel }}</ion-input>
+      </ion-item-divider>
+    </ion-item-group>
+  </ion-list>
+
+<ion-list>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Email</ion-label>
+      <ion-input readonly>{{ res.email }}</ion-input>
+    </ion-item-divider>
+  </ion-item-group>
+</ion-list>
+
+<ion-list>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Mobile no</ion-label>
+      <ion-input readonly>{{ res.mobile }}</ion-input>
+    </ion-item-divider>
+  </ion-item-group>
+</ion-list>
+
+</ion-list>
 </ion-content>
