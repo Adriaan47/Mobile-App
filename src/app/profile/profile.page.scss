@@ -113,31 +113,19 @@ ion-title {
   --padding-bottom: 0px;
   --padding-start: 0;
   font-size: inherit;
+  color: black;
 }
 
 .IncreaseHeight {
   margin-top: 12px;
   margin-bottom: 20px;
 }
+.FontSize1{
+  font-size: 17px;
+  color: 	rgb(126, 126, 126);
+}
 
-.nick{
-  font-size: 18px;
-}
-.enter{
-  font-size: 18px; 
-}
-.name{
-  font-size: 18px;   
-}
-.sur{
-  font-size: 18px; 
-}
-.career{
-  font-size: 18px; 
-}
-.mobile{
-  font-size: 18px; 
-}
-.email{
-  font-size: 18px; 
+.FontSize{
+  font-size: 21px;
+  color: 	rgb(126, 126, 126);
 }
