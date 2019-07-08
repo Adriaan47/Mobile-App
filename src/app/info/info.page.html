@@ -17,24 +17,29 @@
   <ion-list>
     <div>
       <div id="accordion">
-        <ion-list expand="block" class="background" *ngFor="let skil of skills; index as i">
-          <!-- <div class="card-header" id="headingOne"> -->
-            <!-- <h5 class="mb-0"> -->
-
-              <a class="btn btn-link" data-toggle="collapse" attr.data-target="#collapse{{ i }}" aria-expanded="false"
-                aria-controls="collapseOne">
+        <ion-list class="background" *ngFor="let skil of skills; index as i">
 
 
-                <ion-item-group>
-                  <ion-item-divider>
-                    <ion-label>{{ skil.name }} </ion-label>
-                    <ion-note slot="end" color="primary">{{ skil.level }}</ion-note>
-                  </ion-item-divider>
-                </ion-item-group>
-        
+          <ion-item lines="none" class="grey">
+            <ion-label data-toggle="collapse" attr.data-target="#collapse{{ i }}" aria-expanded="false"
+              aria-controls="collapseOne">{{ skil.name }}</ion-label>
+            <ion-note slot="end" color="primary">{{ skil.level }}</ion-note>
+          </ion-item>
 
 
-        <!-- <ion-row>
+          <a class="btn btn-link" data-toggle="collapse" attr.data-target="#collapse{{ i }}" aria-expanded="false"
+            aria-controls="collapseOne">
+
+
+            <!-- <ion-list>
+              <ion-item lines="none">
+                <ion-label>{{ skil.name }}</ion-label>
+                <ion-note slot="end" color="primary">{{ skil.level }}</ion-note>
+              </ion-item>
+            </ion-list> -->
+
+
+            <!-- <ion-row>
                   <ion-col class="col1">
                     {{ skil.name }}
                   </ion-col>
@@ -43,64 +48,64 @@
                   </ion-col>
                 </ion-row> -->
 
-        <div class="col-md-0">
-          <a class="editIcon text-secondary" (click)="onEditSkill(skil.id)" href="#addskill" data-toggle="tab"
-            href="#public" id="public-tab" aria-controls="public" role="tab">
-            <i class="fas fa-trash-alt fa-2x m-2 " style="font-size:20px;"></i>
+            <div>
+              <a class="editIcon text-secondary" (click)="onEditSkill(skil.id)" href="#addskill" data-toggle="tab"
+                href="#public" id="public-tab" aria-controls="public" role="tab">
+                <i class="fas fa-trash-alt fa-2x m-2 " style="font-size:20px;"></i>
+              </a>
+            </div>
+
+            <div>
+              <a class="editIcon text-primary" data-toggle="tab" href="#public" id="public-tab" aria-controls="public"
+                role="tab">
+                <i class="fas fa-pencil-alt fa-2x m-2" style="font-size:20px;"></i>
+              </a>
+            </div>
+
           </a>
-        </div>
+          <!-- </h5> -->
+          <!-- </div> -->
 
-        <div class="col-md-1">
-          <a class="editIcon text-primary" data-toggle="tab" href="#public" id="public-tab" aria-controls="public"
-            role="tab">
-            <i class="fas fa-pencil-alt fa-2x m-2" style="font-size:20px;"></i>
-          </a>
-        </div>
+          <div id="collapse{{ i }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" *ngIf="skil">
+            <div class="card-body">
+              <div class="info">
+                <span class="font-weight-bold">Origin </span>
+                {{ skil.origin }}
+              </div>
+              <!-- <br /> -->
+              <div class="info">
+                <span class="font-weight-bold">Skill level </span>
+                {{ skil.level }}
+              </div>
+              <!-- <br /> -->
+              <div class="info">
+                <span class="font-weight-bold">Last used </span>
+                {{ skil.lastUsed | date }}
+              </div>
+              <br />
+              <div class="info">
+                <span class="font-weight-bold">Months of active experience
+                </span>
+                {{ skil.activeExperience }}
+              </div>
+              <!-- <br /> -->
+              <div class="info">
+                <span class="font-weight-bold">Are you actively developing this skill further ?
+                </span>
+                {{ skil.active}}
+              </div>
+              <!-- <br /> -->
+            </div>
+            <ion-item lines="none">
+              <ion-icon name="md-create" size="large" color="dark" [routerLink]="['/edit-details', skil.id]" slot="end">
+              </ion-icon>
+              <ion-icon name="trash" size="large" color="dark" slot="end" (click)="deleteSkill(skil.id)"></ion-icon>
+            </ion-item>
 
-        </a>
-        <!-- </h5> -->
-      <!-- </div> -->
-
-      <div id="collapse{{ i }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" *ngIf="skil">
-        <div class="card-body">
-          <div class="info">
-            <span class="font-weight-bold">Origin </span>
-            {{ skil.origin }}
           </div>
-          <!-- <br /> -->
-          <div class="info">
-            <span class="font-weight-bold">Skill level </span>
-            {{ skil.level }}
-          </div>
-          <!-- <br /> -->
-          <div class="info">
-            <span class="font-weight-bold">Last used </span>
-            {{ skil.lastUsed | date }}
-          </div>
-          <br />
-          <div class="info">
-            <span class="font-weight-bold">Months of active experience
-            </span>
-            {{ skil.activeExperience }}
-          </div>
-          <!-- <br /> -->
-          <div class="info">
-            <span class="font-weight-bold">Are you actively developing this skill further ?
-            </span>
-            {{ skil.active}}
-          </div>
-          <!-- <br /> -->
-        </div>
-        <ion-item lines="none">
-          <ion-icon name="md-create" size="large" color="dark" [routerLink]="['/edit-details', skil.id]" slot="end">
-          </ion-icon>
-          <ion-icon name="trash" size="large" color="dark" slot="end" (click)="deleteSkill(skil.id)"></ion-icon>
-        </ion-item>
-
+        </ion-list>
       </div>
-  </ion-list>
-  </div>
-  </div>
+    </div>
   </ion-list>
 
 </ion-content>

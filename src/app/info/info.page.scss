@@ -61,3 +61,11 @@ ion-content.background{
     margin-bottom: 0px;
     background: var(--ion-item-background,var(--ion-background-color,#fff));
 }
+
+.list-ios .item-lines-none {
+  --border-width: 0;
+  --inner-border-width: 0;
+  
+}.grey{
+  --background: rgb(243, 242, 242);
+}
