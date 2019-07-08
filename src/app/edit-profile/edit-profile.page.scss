@@ -113,9 +113,19 @@ ion-title {
   --padding-bottom: 0px;
   --padding-start: 0;
   font-size: inherit;
+  color: black;
 }
 
 .IncreaseHeight {
   margin-top: 12px;
   margin-bottom: 20px;
+}
+.FontSize1{
+  font-size: 17px;
+  color: 	rgb(126, 126, 126);
+}
+
+.FontSize{
+  font-size: 16px;
+  color: 	rgb(126, 126, 126);
 }
