@@ -64,32 +64,32 @@
       <div id="collapse{{ i }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" *ngIf="skil">
         <div class="card-body">
           <div class="info">
-            <span class="font-weight-bold">Origin: </span>
+            <span class="font-weight-bold">Origin </span>
             {{ skil.origin }}
           </div>
-          <br />
+          <!-- <br /> -->
           <div class="info">
-            <span class="font-weight-bold">skill Level: </span>
+            <span class="font-weight-bold">Skill level </span>
             {{ skil.level }}
           </div>
-          <br />
+          <!-- <br /> -->
           <div class="info">
-            <span class="font-weight-bold">Last Used: </span>
+            <span class="font-weight-bold">Last used </span>
             {{ skil.lastUsed | date }}
           </div>
           <br />
           <div class="info">
-            <span class="font-weight-bold">Months of Active Experience:
+            <span class="font-weight-bold">Months of active experience
             </span>
             {{ skil.activeExperience }}
           </div>
-          <br />
+          <!-- <br /> -->
           <div class="info">
             <span class="font-weight-bold">Are you actively developing this skill further ?
             </span>
             {{ skil.active}}
           </div>
-          <br />
+          <!-- <br /> -->
         </div>
         <ion-item lines="none">
           <ion-icon name="md-create" size="large" color="dark" [routerLink]="['/edit-details', skil.id]" slot="end">
