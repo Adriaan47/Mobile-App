@@ -1,11 +1,11 @@
 ion-content.background{
     --background: -webkit-linear-gradient(left, #dfdfeb, #e02f9c);
- 
-    }
+     }
 
     #buttonColor{
         --background: #960584;
     }
+
     ion-title {
         position: absolute;
         top: 0;
@@ -33,6 +33,7 @@ ion-content.background{
   .btn-link{
     margin-bottom: -35px;
   }
+
   a:not([href]):not([tabindex]) {
     color: inherit;
     text-decoration: none;
@@ -45,15 +46,18 @@ ion-content.background{
       margin-left: -40px;
       margin-right: 0px;
   }
+
   .col1 {
       margin-left: 10px
   }
+
   .col2{
     margin-left: 10px
   }
   .col {
     margin-bottom: -25px;
   }
+  
   .list-ios {
     margin-left: 0;
     margin-right: 0;
