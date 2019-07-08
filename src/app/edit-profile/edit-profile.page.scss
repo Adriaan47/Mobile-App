@@ -1,13 +1,68 @@
-.filebtn {
-  opacity: 0;
-  position: absolute;
-  top: -100em;
-  left: -100em;
+//  #images {
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	margin: 0 auto;
+// 	max-width: 100%;
+// 	width: 606px;
+// }
+
+// .image {
+// 	margin-left: 0px;
+// 	margin-right: 0px;
+// 	margin-bottom: 0px;
+// 	margin-top: 0px;
+// }
+
+// .main-image, .user-image {
+// 	width: 200px;
+// 	height: 200px;
+// }
+// ion-content.background{
+// 	// --background: url(../../assets/Background1.png) 0 0/100%  no-repeat;
+// 	--background: -webkit-linear-gradient(left, #dfdfeb, #e02f9c);
+
+// 	}
+
+// 	#buttonColor{
+
+//         --background: #960584;
+// 	}
+// 	ion-title {
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		padding: 0 90px 1px;
+// 		width: 100%;
+// 		height: 100%;
+// 		text-align: center;
+// 	  }
+
+// 	  .item-avatar  {
+// 		width:133% !important;
+// 		height : 133% !important;
+// 		max-width: 133px !important;  //any size
+// 		max-height: 133px !important; //any size
+// 		}
+
+#images {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 606px;
 }
 
-.profile-pic {
-  width: 100px;
-  height: 100px;
+.image {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.main-image,
+.user-image {
+  width: 200px;
+  height: 200px;
 }
 ion-content.background {
   // --background: url(../../assets/Background1.png) 0 0/100%  no-repeat;
@@ -16,20 +71,6 @@ ion-content.background {
 
 #buttonColor {
   --background: #960584;
-}
-.ng-valid[required],
-.ng-valid.required {
-  border-left: 5px solid #42a948; /* green */
-}
-
-.ng-invalid:not(form) {
-  border-left: 5px solid #a94442; /* red */
-}
-
-.alert-danger {
-  padding: 5px;
-  background-color: #ffafaf; /* Red */
-  color: #960303;
 }
 ion-title {
   position: absolute;
@@ -41,21 +82,40 @@ ion-title {
   text-align: center;
 }
 
-.item-avatar  {
-  width:120% !important;
-  height : 120% !important;
-  max-width: 120px !important;  //any size
-  max-height: 120px !important; //any size
-  }
-  StartPadding1{
-    padding-start: 40px;
-  }
-  .StartPadding2{
-    padding-start: 20px;
-  }
-  .TopPadding{
-    padding-top: 16px;
-  }
+.item-avatar {
+  width: 150px;
+  height: 150px;
+  max-width: 75px; //any size
+  max-height: 75px; //any size
+}
 
- 
+.padding-color {
+  color: #000000;
+}
 
+.one::placeholder {
+  color: #000000;
+}
+.StartPadding1 {
+  padding-start: 40px;
+}
+.StartPadding2 {
+  padding-start: 20px;
+}
+.TopPadding {
+  padding-top: 16px;
+  
+}
+.ReduceHeight {
+  height: 35px;
+  --padding-top: 0px;
+  --padding-end: 8px;
+  --padding-bottom: 0px;
+  --padding-start: 0;
+  font-size: inherit;
+}
+
+.IncreaseHeight {
+  margin-top: 12px;
+  margin-bottom: 20px;
+}

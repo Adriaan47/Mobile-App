@@ -97,7 +97,7 @@
     <ion-item lines="none">
 
 
-      <ion-thumbnail slot="start">
+      <ion-thumbnail class="IncreaseHeight" slot="start">
         <ion-avatar class="item item-avatar">
           <img src="{{ data.avatar }}">
         </ion-avatar>
@@ -105,11 +105,11 @@
 
 
 
-
-      <ion-label class="StartPadding1" position="floating">Nickname & Surname</ion-label>
-      <ion-input class="StartPadding2" disable="true" readonly="true" [(ngModel)]="name"
-        placeholder='{{res.nickname }} {{res.surname }}'></ion-input>
-
+      <ion-label class="nickname">
+        <ion-label>Nickname & Surname</ion-label>
+        <ion-input class="ReduceHeight" disable="true" readonly="true" [(ngModel)]="name" placeholder='{{res.nickname }} {{res.surname }}'>
+        </ion-input>
+      </ion-label>
 
 
 

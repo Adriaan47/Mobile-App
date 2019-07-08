@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-icon slot="start" name="arrow-round-back" size="large" routerLink="/tabs/members" size="large"></ion-icon>
     <ion-title>Member's details</ion-title>
@@ -13,16 +13,13 @@
     </ion-item>
   </ion-list> -->
 
-
-
-
-  <!--         
+<!---        
       <ion-thumbnail slot="start">
         <ion-avatar class="item item-avatar"> <img class="item-avatar" src="{{ dp.avatar }}">
         </ion-avatar>
       </ion-thumbnail>
      
-    -->
+    
 
 
 <ion-list>
@@ -63,4 +60,86 @@
 </ion-list>
 
 </ion-list>
+</ion-content> -->
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="arrow-back" slot="start" size="large" routerLink="/tabs/members"></ion-icon>
+    <ion-title>Member's details</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding class="background">
+
+
+  <ion-item lines="none">
+    <ion-thumbnail slot="start">
+
+      <ion-avatar class="item item-avatar">
+
+        <img src="{{ dp.avatar }}"></ion-avatar>
+
+    </ion-thumbnail>
+    <!-- <ion-row style="height: 20px"></ion-row> -->
+
+
+
+    <ion-label class="nickname">
+      <ion-label position="floating">Nickname & Surname</ion-label>
+      <ion-input class="one" disable="true" readonly="true" [(ngModel)]="name" placeholder=''>
+        {{res.nickname | titlecase }} {{res.surname | titlecase}}</ion-input>
+    </ion-label>
+  </ion-item>
+
+
+
+  <div>
+    <div>
+      <ion-item lines="none">
+        <ion-label position="floating">Enterprise ID</ion-label>
+        <ion-input disable="false" color="dark" placeholder=''>{{res.name | lowercase}}.{{res.surname | lowercase}}
+        </ion-input>
+      </ion-item>
+    </div>
+
+    <div>
+      <ion-item lines="none">
+        <ion-label position="floating">First name(s)</ion-label>
+        <ion-input disable="false" color="dark" placeholder=''>{{res.name | titlecase}}</ion-input>
+      </ion-item>
+    </div>
+
+    <div>
+      <ion-item lines="none">
+        <ion-label position="floating">Surname</ion-label>
+        <ion-input disable="false" color="dark" placeholder=''>{{res.surname | titlecase}}</ion-input>
+      </ion-item>
+    </div>
+
+    <div>
+      <ion-item lines="none">
+        <ion-label position="floating">Career level</ion-label>
+        <ion-input disable="false" color="dark" placeholder=''>{{res.careerLevel}}</ion-input>
+      </ion-item>
+    </div>
+
+    <div>
+      <ion-item lines="none">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input disable="false" color="dark" placeholder=''>{{res.email}}</ion-input>
+      </ion-item>
+    </div>
+  </div>
+  <!-- <ion-list >
+    <ion-list>
+        <ion-item-group>
+          <ion-item-divider>
+            <ion-label>{{ res.name | titlecase }} {{ res.surname | titlecase }} </ion-label>
+            <ion-note slot="end" color="primary">{{ res.careerLevel }}</ion-note>
+          </ion-item-divider>
+        </ion-item-group>
+      </ion-list>
+  </ion-list> -->
+
+
 </ion-content>

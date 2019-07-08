@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-icon (click)="presentAlertBack()" slot="start" name="arrow-round-back" size="large" size="large"></ion-icon>
+    <ion-icon slot="start" name="arrow-round-back" (click)="presentAlertBack()" size="large"></ion-icon>
     <ion-title>Edit profile</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -8,18 +8,20 @@
 
 <ion-content padding class="background">
 
-  <input type="file" #fileBtn name="image" #image (change)="uploadImg(image)" class="filebtn" />
+  <input type="file" #fileBtn name="image" hidden="true" #image (change)="uploadImg(image)" class="filebtn" />
 
 
   <ion-item lines="none">
-    <ion-thumbnail slot="start">
+    <ion-thumbnail  class="IncreaseHeight" slot="start">
       <ion-avatar class="item item-avatar">
         <img src="{{ avatar }}" (click)="updateProfilePicture()">
       </ion-avatar>
     </ion-thumbnail>
-        <ion-label>
-      <ion-label class="StartPadding1" position="floating">First name & Surname</ion-label>
-      <ion-input class="StartPadding2" position="floating" placeholder="{{name }} {{surname }}">
+
+    
+    <ion-label class="nickname">
+      <ion-label>First name & Surname</ion-label>
+      <ion-input class="ReduceHeight" placeholder="{{name}} {{surname}}">
       </ion-input>
     </ion-label>
 

@@ -28,6 +28,10 @@ export class EditDetailsPage implements OnInit {
   active;
   id;
   skillID: string;
+  res: any;
+  skills: any;
+  origin;
+
 
   constructor(
     private users: UsersService,
@@ -48,6 +52,7 @@ export class EditDetailsPage implements OnInit {
     this.active = event.active;
     this.lastUsed = event.lastUsed;
     this.activeExperience = event.activeExperience;
+    this.origin = event.origin;
 });
   }
 
@@ -59,56 +64,33 @@ export class EditDetailsPage implements OnInit {
           lastUsed: this.lastUsed,
           activeExperience: this.activeExperience,
           active: this.active,
+          origin: this.origin,
     });
 
     this.router.navigate(['/tabs/info']);
   }
 
+  deleteSkill(id: string) {
+    this.users.deleteSkill(this.users.getUID(), id ).subscribe((res) => {
+      this.res = res;
+      console.log(res);
 
-async presentAlertConfirm() {
-// this.router.navigate(['/tabs/profile']);
-// }
-const alert = await this.alertCtrl.create({
-header: 'Update successful',
-message: 'Your profile has been updated',
-buttons: [
-{
-text: 'OK',
-handler: () => {
-this.router.navigate(['/tabs/info']);
-this.refresh();
-}
+    });
+  }
+  getSkills() {
+      this.users.getSkills(this.users.getUID()).subscribe(skills => this.skills = skills);
+    }
 
-}
-]
-// tslint:disable-next-line: semicolon
-});
-await alert.present();
-}
-async presentAlertDiscard() {
-  const alert = await this.alertCtrl.create({
-    header: 'Discard changes?',
-    message: 'Are you sure you want to discard changes?',
-    buttons: [
-      {
-        text: 'No',
-        role: 'cancel',
-        cssClass: 'secondary',
-        handler: (blah) => {
-          console.log('Confirm Cancel: ?');
-        }
-      }, {
-        text: 'Yes',
-        handler: () => {
-          this.router.navigate(['/tabs/info']);
-        }
-      }
-    ]
-// tslint:disable-next-line: semicolon
-  });
-  await alert.present();
-}
-refresh(): void {
-  window.location.reload();
-}
-}
+    deleteDoc() {
+      this.skillID = this.route.snapshot.paramMap.get('id');
+      this.afs.doc(`users/${this.users.getUID()}/skills/${this.skillID}`).delete();
+    }
+    doRefresh(event) {
+      console.log('Begin async operation');
+
+      setTimeout(() => {
+        console.log('Async operation has ended');
+        event.target.complete();
+      }, 2000);
+    }
+  }
