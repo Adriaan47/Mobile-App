@@ -106,7 +106,7 @@
 
 
       <ion-label class="nickname">
-        <ion-label>Nickname & Surname</ion-label>
+        <ion-label class= "nick">Nickname & Surname</ion-label>
         <ion-input class="ReduceHeight" disable="true" readonly="true" [(ngModel)]="name" placeholder='{{res.nickname }} {{res.surname }}'>
         </ion-input>
       </ion-label>
@@ -120,7 +120,7 @@
     <div *ngIf="res">
       <div>
         <ion-item>
-          <ion-label position="floating">Enterprise ID</ion-label>
+          <ion-label position="floating" class="enter">Enterprise ID</ion-label>
           <ion-input disable="false" color="dark" placeholder=''>{{res.name | lowercase}}.{{res.surname | lowercase}}
           </ion-input>
         </ion-item>
@@ -128,34 +128,34 @@
 
       <div class="profile-info">
         <ion-item *ngIf="res">
-          <ion-label position="floating">First name(s)</ion-label>
+          <ion-label position="floating" class="name">First name(s)</ion-label>
           <ion-input disable="false" color="dark" placeholder=''>{{ res.name  }}</ion-input>
         </ion-item>
       </div>
       <div class="profile-info">
         <ion-item *ngIf="res">
-          <ion-label position="floating">Surname</ion-label>
+          <ion-label position="floating" class="sur">Surname</ion-label>
           <ion-input disable="false" color="dark" placeholder=''>{{ res.surname  }}</ion-input>
         </ion-item>
       </div>
 
       <div class="profile-info">
         <ion-item *ngIf="res">
-          <ion-label position="floating">Career level</ion-label>
+          <ion-label position="floating" class="career">Career level</ion-label>
           <ion-input disable="true" color="dark" placeholder=''>{{ res.careerLevel }}</ion-input>
         </ion-item>
       </div>
 
       <div class="profile-info">
         <ion-item *ngIf="res">
-          <ion-label position="floating">Mobile number</ion-label>
+          <ion-label position="floating" class="mobile">Mobile number</ion-label>
           <ion-input disable="true" color="dark" placeholder=''>{{ res.mobile }}</ion-input>
         </ion-item>
       </div>
 
       <div class="profile-info">
         <ion-item *ngIf="res">
-          <ion-label position="floating">Email</ion-label>
+          <ion-label position="floating" class="email">Email</ion-label>
           <ion-input disable="true" placeholder=''>{{ res.email }}</ion-input>
         </ion-item>
       </div>
