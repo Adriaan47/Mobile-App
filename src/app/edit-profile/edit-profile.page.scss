@@ -129,3 +129,18 @@ ion-title {
   font-size: 16px;
   color: 	rgb(126, 126, 126);
 }
+
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid #42a948; /* green */
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.alert-danger {
+  padding: 5px;
+  background-color: #ffafaf; /* Red */
+  color: #960303;
+}

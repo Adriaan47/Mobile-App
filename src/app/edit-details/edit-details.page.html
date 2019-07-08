@@ -16,7 +16,7 @@
   
         <div class="form-group">
           <ion-item lines="none">
-            <ion-label position="floating" for="Skill_level">Skill level</ion-label>
+            <ion-label  class="FontSize" position="floating" for="Skill_level">Skill level</ion-label>
             <ion-input type="text" class="form-control" id="level" placeholder="{{ level }} " required [(ngModel)]="  level"
               name="  level" #Skill_level="ngModel"> </ion-input>
           </ion-item>
@@ -30,7 +30,7 @@
   
         <div class="form-group">
           <ion-item lines="none">
-            <ion-label color=dark position="floating" for="Date_last_used">Date last used</ion-label>
+            <ion-label  class="FontSize" position="floating" for="Date_last_used">Date last used</ion-label>
             <ion-input>
               <ion-datetime class="form-control" id="lastUsed" placeholder=" " required [(ngModel)]="lastUsed"
                 name="lastUsed" display-format="DD MMM YYYY"  #Date_last_used="ngModel"
@@ -48,7 +48,7 @@
   
                 <div class="form-group">
                   <ion-item>
-                    <ion-label color=dark position="floating" for="Origin">Origin</ion-label>
+                    <ion-label class="FontSize" position="floating" for="Origin">Origin</ion-label>
                     <ion-select class="form-control" placeholder=" " id="origin" required [(ngModel)]="origin" name="origin"
                       #Origin="ngModel">
                       <ion-select-option value="University">Tertiary</ion-select-option>
@@ -68,7 +68,7 @@
   
         <div class="form-group">
           <ion-item lines="none">
-            <ion-label color=dark position="floating" for="Months_of_active_experience">Months
+            <ion-label  class="FontSize" position="floating" for="Months_of_active_experience">Months
               of active experience</ion-label>
             <ion-input type="text" class="form-control" id="activeExperience" placeholder=" " required
               [(ngModel)]="activeExperience" name="activeExperience" #Months_of_active_experience="ngModel">
@@ -84,7 +84,7 @@
   
         <div class="form-group">
           <ion-item lines="none">
-            <ion-label color=dark position="floating" for="Developing_skill">
+            <ion-label  class="FontSize" position="floating" for="Developing_skill">
               Currently developing this skill?
             </ion-label>
             <ion-select class="form-control" id="active" placeholder=" " required [(ngModel)]="active" name="active"
