@@ -77,7 +77,7 @@ export class InfoPage implements OnInit {
       await alert.present();
     }
 
-    async presentAlertConfirmDelete() {
+    async presentAlertConfirmDelete(id: string) {
       const alert = await this.alertCtrl.create({
         header: 'Delete Skill?',
         message: 'Are you sure you want to delete this skill?',
@@ -92,7 +92,8 @@ export class InfoPage implements OnInit {
           }, {
             text: 'Yes',
             handler: () => {
-              this.deleteSkill(this.id);
+              this.deleteSkill(id);
+              this.refresh();
             }
           }
         ]
@@ -122,9 +123,10 @@ deleteSkill(id: string) {
   this.users.deleteSkill(this.users.getUID(), id ).subscribe((res) => {
     this.res = res;
     console.log(res);
-    this.presentAlertConfirmDelete();
-
+    this.refresh();
   });
 }
-
+refresh(): void {
+  window.location.reload();
+}
 }

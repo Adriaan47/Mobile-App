@@ -107,7 +107,7 @@ export class EditDetailsPage implements OnInit {
           text: 'OK',
           handler: () => {
             this.router.navigate(['/tabs/info']);
-            
+            this.refresh();
           }
         }
       ]

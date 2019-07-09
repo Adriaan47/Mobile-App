@@ -127,8 +127,9 @@ buttons: [
 {
 text: 'OK',
 handler: () => {
-this.router.navigate(['/tabs/profile']);
+ this.router.navigate(['/tabs/profile']);
 this.refresh();
+
 }
 
 }

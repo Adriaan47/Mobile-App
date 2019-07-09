@@ -53,9 +53,7 @@ export class LoginPage implements OnInit {
 
         this.router.navigate(['/tabs']);
         console.log(username);
-
-
-      }
+       }
 
     } catch (err) {
       console.log(err);
