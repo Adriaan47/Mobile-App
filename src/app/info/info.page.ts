@@ -38,7 +38,6 @@ export class InfoPage implements OnInit {
     private alertCtrl: AlertController,
     public popoverController: PopoverController,
         ) {
-
     }
 
   ngOnInit() {

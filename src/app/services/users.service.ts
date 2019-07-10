@@ -48,7 +48,6 @@ export class UsersService {
         return this.http.delete(this.skillUrl + `/${uid}/delete/${id}`);
         }
 
-
         createSkill (uid: string, skill: Skills) {
           return this.http.post(this.skillUrl + `/${uid}/create`, skill );
         }
@@ -69,6 +68,10 @@ export class UsersService {
 
         getDatas(id: string): Observable<Object> {
           return this.http.get(`http://localhost:3000/users/${id}/get-public`);
+        }
+
+        getMember(id: string) {
+          return this.http.get(`http://localhost:3000/users/${id}/member`);
         }
 
         getSkills(id: string): Observable<Object> {

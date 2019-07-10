@@ -44,7 +44,7 @@ export class EditDetailsPage implements OnInit {
     private user: UserService,
     public alertCtrl: AlertController
   ) { }
-
+    skill: any;
   ngOnInit() {
     this.skillID = this.route.snapshot.paramMap.get('id');
     this.mainuser = this.afs.doc(`users/${this.users.getUID()}/skills/${this.skillID}`);
