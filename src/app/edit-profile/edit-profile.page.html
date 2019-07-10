@@ -7,16 +7,18 @@
 
 
 <ion-content padding class="background">
-
-  <input type="file" #fileBtn name="image" hidden="true" #image (change)="uploadImg(image)" class="filebtn" />
-
-
+  
   <ion-item lines="none">
     <ion-thumbnail  class="IncreaseHeight" slot="start">
       <ion-avatar class="item item-avatar">
         <img src="{{ avatar }}" (click)="updateProfilePicture()">
       </ion-avatar>
     </ion-thumbnail>
+    <ion-item slot="end">
+    <ion-button id="uploadPic"> Upload Picture
+      <input type="file" #fileBtn name="image" hidden="true" #image (change)="uploadImg(image)" class="filebtn" />
+    </ion-button>
+  </ion-item>
 
     
     <ion-label class="nickname">
