@@ -48,13 +48,10 @@ export class UsersService {
         return this.http.delete(this.skillUrl + `/${uid}/delete/${id}`);
         }
 
-<<<<<<< HEAD
-=======
         createSkill (uid: string, skill: Skills) {
           return this.http.post(this.skillUrl + `/${uid}/create`, skill );
         }
 
->>>>>>> a039a8cdc91ab12bcd6c73af4a471bbfa3b6cd39
 
         getCurrentUserSkill(uid: string, skill: Skills): Observable<Skills> {
           return this.http.get<Skills>(this.skillUrl + `/${uid}skill/${skill.id}`);
