@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar routerLink="/tabs/profile">
-    <ion-icon routerLink="/tabs/profile" slot="start" name="arrow-round-back" size="large" size="large"></ion-icon>
+  <ion-toolbar>
+    <ion-icon slot="start" name="arrow-round-back" (click)="presentAlertBack()" size="large"></ion-icon>
     <ion-title>Edit profile</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -8,24 +8,25 @@
 
 <ion-content padding class="background">
 
-  <input type="file" #fileBtn name="image" #image (change)="uploadImg(image)" class="filebtn" />
-  <div>
-    <ion-item>
-      <ion-row style="height: 20px"></ion-row>
-      <ion-thumbnail slot="start">
-        <ion-avatar class="item item-avatar">
-          <img src="{{ avatar }}" (click)="updateProfilePicture()">
-        </ion-avatar>
-      </ion-thumbnail>
+  <input type="file" #fileBtn name="image" hidden="true" #image (change)="uploadImg(image)" class="filebtn" />
 
-      <ion-label>
 
-        <ion-label position="floating">{{name | titlecase }} {{surname | titlecase}}</ion-label>
-        <ion-input disable="true" readonly="true"></ion-input>
+  <ion-item lines="none">
+    <ion-thumbnail  class="IncreaseHeight" slot="start">
+      <ion-avatar class="item item-avatar">
+        <img src="{{ avatar }}" (click)="updateProfilePicture()">
+      </ion-avatar>
+    </ion-thumbnail>
 
-      </ion-label>
-    </ion-item>
-  </div>
+    
+    <ion-label class="nickname">
+      <ion-label class="FontSize1">First name & Surname</ion-label>
+      <ion-input class="ReduceHeight" placeholder=" ">{{name}} {{surname}}
+      </ion-input>
+    </ion-label>
+
+  </ion-item>
+
 
 
   <ion-list>
@@ -34,7 +35,7 @@
 
         <div class="form-group">
 
-          <ion-label position="floating">First name(s)</ion-label>
+          <ion-label class="FontSize" position="floating">First name(s)</ion-label>
           <ion-input type="text" class="form-control" id="name" required [(ngModel)]="name" name="name"
             #First_name="ngModel">
           </ion-input>
@@ -49,7 +50,7 @@
 
         <div class="form-group">
 
-          <ion-label position="floating" for="First_name">Surname</ion-label>
+          <ion-label class="FontSize" position="floating" for="First_name">Surname</ion-label>
           <ion-input type="text" class="form-control" id="surname" required [(ngModel)]="surname" name="surname"
             #First_name="ngModel"></ion-input>
 
@@ -62,7 +63,7 @@
 
         <div class="form-group">
 
-          <ion-label position="floating" for="First_name">Career level</ion-label>
+          <ion-label class="FontSize" position="floating" for="First_name">Career level</ion-label>
           <ion-input class="form-control" id="careerLevel" required [(ngModel)]="careerLevel" name="careerLevel"
             #First_name="ngModel"></ion-input>
 
@@ -75,7 +76,7 @@
 
         <div class="form-group">
 
-          <ion-label position="floating" for="First_name">Mobile number</ion-label>
+          <ion-label class="FontSize" position="floating" for="First_name">Mobile number</ion-label>
           <ion-input type="text" class="form-control" id="mobile" required [(ngModel)]="mobile" name="mobile"
             #First_name="ngModel"></ion-input>
 
@@ -88,7 +89,7 @@
 
         <div class="form-group">
 
-          <ion-label position="floating" for="First_name">Nickname</ion-label>
+          <ion-label class="FontSize" position="floating" for="First_name">Nickname</ion-label>
           <ion-input type="text" class="form-control" id="nickname" required [(ngModel)]="nickname" name="nickname"
             #First_name="ngModel"></ion-input>
 
