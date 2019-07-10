@@ -28,6 +28,11 @@ export class EditDetailsPage implements OnInit {
   active;
   id;
   skillID: string;
+  res: any;
+  skills: any;
+  origin;
+  name: any;
+
 
   constructor(
     private users: UsersService,
@@ -39,53 +44,102 @@ export class EditDetailsPage implements OnInit {
     private user: UserService,
     public alertCtrl: AlertController
   ) { }
-
+    skill: any;
   ngOnInit() {
     this.skillID = this.route.snapshot.paramMap.get('id');
     this.mainuser = this.afs.doc(`users/${this.users.getUID()}/skills/${this.skillID}`);
     this.sub = this.mainuser.valueChanges().subscribe(event => {
-    this.level = event.level;
-    this.active = event.active;
-    this.lastUsed = event.lastUsed;
-    this.activeExperience = event.activeExperience;
-});
+      this.name = event.name;
+      this.level = event.level;
+      this.active = event.active;
+      this.lastUsed = event.lastUsed;
+      this.activeExperience = event.activeExperience;
+      this.origin = event.origin;
+    });
   }
 
   async UpdateSkills() {
     this.skillID = this.route.snapshot.paramMap.get('id');
     this.busy = true;
-          this.afs.doc(`users/${this.users.getUID()}/skills/${this.skillID}`).update({
-          level : this.level,
-          lastUsed: this.lastUsed,
-          activeExperience: this.activeExperience,
-          active: this.active,
+    this.afs.doc(`users/${this.users.getUID()}/skills/${this.skillID}`).update({
+      name: this.name,
+      level: this.level,
+      lastUsed: this.lastUsed,
+      activeExperience: this.activeExperience,
+      active: this.active,
+      origin: this.origin,
     });
 
-    this.router.navigate(['/tabs/info']);
+    this.presentAlertUpdateSkill();
   }
 
+  deleteSkill(id: string) {
+    this.users.deleteSkill(this.users.getUID(), id).subscribe((res) => {
+      this.res = res;
+      console.log(res);
 
-async presentAlertConfirm() {
-// this.router.navigate(['/tabs/profile']);
-// }
-const alert = await this.alertCtrl.create({
-header: 'Update successful',
-message: 'Your profile has been updated',
-buttons: [
-{
-text: 'OK',
-handler: () => {
-this.router.navigate(['/tabs/profile']);
-this.refresh();
+    });
+  }
+  getSkills() {
+    this.users.getSkills(this.users.getUID()).subscribe(skills => this.skills = skills);
+  }
+
+  deleteDoc() {
+    this.skillID = this.route.snapshot.paramMap.get('id');
+    this.afs.doc(`users/${this.users.getUID()}/skills/${this.skillID}`).delete();
+  }
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
+  refresh(): void {
+    window.location.reload();
+  }
+  async presentAlertUpdateSkill() {
+    //   this.router.navigate(['/tabs/profile']);
+    // }
+    const alert = await this.alertCtrl.create({
+      header: 'Update successful',
+      message: 'Your skill has been updated',
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+            this.router.navigate(['/tabs/info']);
+            this.refresh();
+          }
+        }
+      ]
+      // tslint:disable-next-line: semicolon
+    });
+    await alert.present();
+  }
+  async presentAlertDiscard() {
+    const alert = await this.alertCtrl.create({
+      header: 'Discard changes?',
+      message: 'Are you sure you want to discard changes?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: ?');
+          }
+        }, {
+          text: 'Yes',
+          handler: () => {
+            this.router.navigate(['/tabs/info']);
+          }
+        }
+      ]
+      // tslint:disable-next-line: semicolon
+    });
+    await alert.present();
+  }
 }
 
-}
-]
-// tslint:disable-next-line: semicolon
-});
-await alert.present();
-}
-refresh(): void {
-  window.location.reload();
-}
-}
