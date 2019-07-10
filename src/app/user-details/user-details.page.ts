@@ -1,7 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UsersService } from '../services/users.service';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestoreDocument } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-details',
@@ -14,20 +16,40 @@ export class UserDetailsPage implements OnInit {
   mainuser: AngularFirestoreDocument;
   sub;
   user: any;
+  alertCtrl: any;
+  router: any;
+  res: any;
+  dp: any;
 
   constructor(
-    private route: ActivatedRoute, private users: UsersService,
-  ) { }
+    private route: ActivatedRoute, private users: UsersService, private rout: Router
+  ) {
+    this.getdp();
+  }
 
   ngOnInit() {
     this.userID = this.route.snapshot.paramMap.get('id');
     console.log(this.userID);
-    this.users.getMember(this.userID).subscribe(res => {
-      this.user = res;
-      console.log(this.user);
+
+    this.users.getDatas(this.userID).subscribe(res => {
+      this.res = res;
+      console.log(this.res);
     });
   }
 
+  getdp() {
+    this.userID = this.route.snapshot.paramMap.get('id');
+    console.log(this.userID);
+
+    this.users.getProfilePicture(this.userID).subscribe(dp => {
+      this.dp = dp;
+      console.log(this.dp);
+    });
+  }
+
+  back() {
+    this.rout.navigate(['tabs/members']);
+  }
 
 
 }

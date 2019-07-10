@@ -135,7 +135,8 @@ export class SkillsPage implements OnInit {
           {
             text: 'OK',
             handler: () => {
-              this.router.navigate(['/tabs/profile']);
+              this.router.navigate(['/tabs/info']);
+              this.refresh();
             }
           }
         ]
@@ -143,7 +144,29 @@ export class SkillsPage implements OnInit {
       });
       await alert.present();
     }
-
+    async presentAlertBack() {
+      const alert = await this.alertCtrl.create({
+        header: 'Discard changes?',
+        message: 'Any unsaved work will be discarded.',
+        buttons: [
+          {
+            text: 'No',
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: (blah) => {
+              console.log('Confirm Cancel: ?');
+            }
+          }, {
+            text: 'Yes',
+            handler: () => {
+              this.router.navigate(['tabs/info']);
+            }
+          }
+        ]
+    // tslint:disable-next-line: semicolon
+      });
+      await alert.present();
+    }
   openkeypad() {
     this.keyboard.show();
   }
@@ -154,4 +177,8 @@ export class SkillsPage implements OnInit {
       this.res = res;
     });
   }
+  refresh(): void {
+    window.location.reload();
+    this.router.navigate(['tabs/info']);
+}
 }

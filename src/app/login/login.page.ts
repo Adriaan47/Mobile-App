@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { RegisterPage } from '../register/register.page';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { ReactiveFormsModule , Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +18,7 @@ export class LoginPage implements OnInit {
   username: string = '';
   // tslint:disable-next-line: no-inferrable-types
   password: string = '';
+
 
 
   // tslint:disable-next-line:max-line-length
@@ -52,7 +53,7 @@ export class LoginPage implements OnInit {
 
         this.router.navigate(['/tabs']);
         console.log(username);
-      }
+       }
 
     } catch (err) {
       console.log(err);
@@ -63,6 +64,19 @@ export class LoginPage implements OnInit {
       });
       toast.present();
 
+    }
+    // this.wait(3000);
+    // this.refresh();
+  }
+  refresh(): void {
+    window.location.reload();
+  }
+
+  wait(ms) {
+    const start = new Date().getTime();
+    let end = start;
+    while (end < start + ms) {
+      end = new Date().getTime();
     }
   }
 }

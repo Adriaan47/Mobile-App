@@ -1,26 +1,33 @@
 <ion-header class="popover">
 </ion-header>
 <ion-content lass="popover">
-  <ion-list *ngFor="let post of data">
-      <ion-item>
-          <ion-thumbnail slot="start">
-            <ion-avatar  ><img src="https://ucarecdn.com/{{ post.profilePic }}/-/scale_crop/150x150/center/"></ion-avatar>
-          </ion-thumbnail>
-        </ion-item>
-      <p class="ion-padding-start"> {{ post.name }} </p>
-      <p class="ion-padding-start" color="dark">Application support</p>
-      <p class="ion-padding-start" color="dark">new associate</p>
-      <!-- <p size="small" color="dark">Kealebogile Itumeleng</p> -->
-      <p class="ion-padding-start" color="dark">+27 73 433 2223</p>
-      <p class="ion-padding-start" position="floating" style="color:darkgray">Current Project</p>
-      <p class="ion-padding-start" color="dark">Absa Website</p>
-    
-      <p class="ion-padding-start" position="floating" style="color:darkgray">Skills</p>
-      <p class="ion-padding-start" color="dark">Javascript</p>
-      <p class="ion-padding-start" color="dark"> Angular JS</p>
-      <p class="ion-padding-start" color="dark"> AdobeXD</p>
+    <ion-list *ngFor="let post of data">
 
-  </ion-list>
- 
+        <p> {{ post.name }} </p>
+    </ion-list>
+
+    <ion-item>
+        <ion-thumbnail slot="start">
+            <ion-avatar><img src="https://ucarecdn.com/{{ post.profilePic }}/-/scale_crop/150x150/center/"></ion-avatar>
+        </ion-thumbnail>
+
+    </ion-item>
+    <ion-list>
+        <p class="ion-padding-start"> {{ post.name }} </p>
+        <p class="ion-padding-start" color="dark">Application support</p>
+        <p class="ion-padding-start" color="dark">new associate</p>
+        <!-- <p size="small" color="dark">Kealebogile Itumeleng</p> -->
+        <p class="ion-padding-start" color="dark">+27 73 433 2223</p>
+        <p class="ion-padding-start" position="floating" style="color:darkgray">Current Project</p>
+        <p class="ion-padding-start" color="dark">Absa Website</p>
+
+        <p class="ion-padding-start" position="floating" style="color:darkgray">Skills</p>
+        <p class="ion-padding-start" color="dark">Javascript</p>
+        <p class="ion-padding-start" color="dark"> Angular JS</p>
+        <p class="ion-padding-start" color="dark"> AdobeXD</p>
+
+    </ion-list>
+
+
 
 </ion-content>

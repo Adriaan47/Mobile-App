@@ -1,0 +1,61 @@
+{
+    "data":[
+        {
+            "project": "Current project",
+            "children" :[
+                {
+                "project": "Absa",
+                "task": "Update the front-end",
+                "role": "Web Developer",
+                "start": "2019/07/09",
+                "off": "2019/12/22"
+                
+            }
+            ]
+        },
+        {
+            "project": "Upcoming projects",
+            "children": [
+                {
+                    "project": "Cola Cola",
+                    "children": [
+                        {
+                            "project": "Cola Cola",
+                            "task": "Re-make add",
+                            "role": "Media manager",
+                            "start": "2019/05/09",
+                            "off": "TBA"
+                        }
+                    ]
+                },
+                {
+                    "project": "Hollard",
+                    "children": [
+                        {
+                            "project": "Hollard",
+                            "task": "Business plan",
+                            "role": "Business Analyst",
+                            "start": "2019/05/09",
+                            "off": "TBA"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "project": "Past projects",
+            "children":[
+                {
+                    "project": "Capitec",
+                    "task": "Capitec online banking solution",
+                    "role": "Information Technology",
+                    "start": "2018/05/09",
+                    "off": "----"
+                    
+
+                }
+            ]
+
+        }
+    ]
+}

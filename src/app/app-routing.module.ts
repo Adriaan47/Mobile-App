@@ -9,11 +9,8 @@ const routes: Routes = [
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule', canActivate: [AuthService]  },
   { path: 'edit-details/:id', loadChildren: './edit-details/edit-details.module#EditDetailsPageModule' },
-  { path: 'about-skill', loadChildren: './about-skill/about-skill.module#AboutSkillPageModule' },
   { path: 'members', loadChildren: './members/members.module#MembersPageModule' },
   { path: 'user-details/:id', loadChildren: './user-details/user-details.module#UserDetailsPageModule' },
-
-
 ];
 
 @NgModule({
@@ -21,6 +18,5 @@ const routes: Routes = [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
-
 })
 export class AppRoutingModule { }

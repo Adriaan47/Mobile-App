@@ -20,4 +20,35 @@ ion-content.background{
         text-align: center;
       }
 
+      
+	  .item-avatar  {     
+		width:133% !important;  
+		height : 133% !important;  
+		max-width: 133px !important;  //any size
+		max-height: 133px !important; //any size 
+		}
+
+        .list-ios {
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: -1px;
+            margin-bottom: 8px;
+            background: var(--ion-item-background,var(--ion-background-color,#fff));
+        }
+        .sc-ion-label-ios-h {
+            --color: cornflowerblue;
+            display: block;
+            color: var(--color);
+            font-family: var(--ion-font-family,inherit);
+            font-size: inherit;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+          }
+          ion-note{
+            color: black;
+          }
+
   

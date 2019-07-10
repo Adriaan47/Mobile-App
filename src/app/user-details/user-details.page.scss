@@ -1,0 +1,85 @@
+#images {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 606px;
+}
+
+.image {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.main-image,
+.user-image {
+  width: 200px;
+  height: 200px;
+}
+ion-content.background {
+  // --background: url(../../assets/Background1.png) 0 0/100%  no-repeat;
+  --background: -webkit-linear-gradient(left, #dfdfeb, #e02f9c);
+}
+
+#buttonColor {
+  --background: #960584;
+}
+ion-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 90px 1px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.item-avatar {
+  width: 150px;
+  height: 150px;
+  max-width: 75px; //any size
+  max-height: 75px; //any size
+}
+
+.padding-color {
+  color: #000000;
+}
+
+.one::placeholder {
+  color: #000000;
+}
+.StartPadding1 {
+  padding-start: 40px;
+}
+.StartPadding2 {
+  padding-start: 20px;
+}
+.TopPadding {
+  padding-top: 16px;
+  
+}
+.ReduceHeight {
+  height: 35px;
+  --padding-top: 0px;
+  --padding-end: 8px;
+  --padding-bottom: 0px;
+  --padding-start: 0;
+  font-size: inherit;
+  color: black;
+}
+
+.IncreaseHeight {
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+.FontSize1{
+  font-size: 17px;
+  color: 	rgb(126, 126, 126);
+}
+
+.FontSize{
+  font-size: 21px;
+  color: 	rgb(126, 126, 126);
+}
