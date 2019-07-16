@@ -16,7 +16,7 @@ uid: string;
 export class UserService {
 public user: user;
 // tslint:disable-next-line: no-inferrable-types
-private url: string = 'http://localhost:3000/users';
+private url: string = 'https://demoproject-8b1fa.appspot.com/users';
 
 constructor(public afAuth: AngularFireAuth, private http: HttpClient) {
 
@@ -40,7 +40,7 @@ getName(): string {
       }
 
       getDatas(id: string): Observable<Object> {
-        return this.http.get(`http://localhost:3000/users/${id}`);
+        return this.http.get(`https://demoproject-8b1fa.appspot.com/users/${id}`);
       }
 
 

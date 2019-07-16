@@ -38,7 +38,7 @@ export class ProfilePage implements OnInit {
 
 
   ngOnInit() {
-    this.users.getDatas(this.users.getUID()).subscribe((res) => {
+    this.users.getMember(this.users.getUID()).subscribe((res) => {
       this.res = res;
       console.log(res);
     });

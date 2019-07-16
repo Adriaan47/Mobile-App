@@ -1,6 +1,6 @@
 import 'bootstrap';
 import { catchError, map } from 'rxjs/operators';
-import { UsersService } from 'src/app/services/users.service';
+import { UsersService } from '../services/users.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
@@ -8,7 +8,6 @@ import { AlertController, PopoverController } from '@ionic/angular';
 import {Users } from '../services/users.interface';
 import { DataService } from '../services/data.service';
 import { MemberinfoComponent } from './memberinfo/memberinfo.component';
-import { User } from 'firebase';
 import { Subject, combineLatest } from 'rxjs';
 
 
@@ -38,7 +37,7 @@ constructor(private afs: AngularFirestore, private user: UsersService) {
  }
 
 ngOnInit() {
-this.getAllMembers().subscribe((users) => {
+this.getData().subscribe((users) => {
 users.forEach((user): any => {
 this.allUsers.push(user);
 return this.allUsers;
@@ -64,6 +63,10 @@ getAll() {
 }
 getAllMembers() {
 return this.afs.collection('users').valueChanges();
+}
+
+getData(){
+  return this.afs.collection('users').valueChanges();
 }
 
 search($event) {
