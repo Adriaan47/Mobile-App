@@ -1,0 +1,47 @@
+
+  <div class="content-container pt-4">
+    <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel" >Upload image</h3>
+      </div>
+</div>
+<div class="modal-body col">
+    <div class="col-sm-12">
+        <image-cropper
+        style="width: 200px; height: 250px; float:left;"
+        [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="true"
+        [aspectRatio]="8 / 8"
+        [maintainAspectRatio]="true"
+        [resizeToHeight]="160"
+        [resizeToWidth]="150"
+        [cropperMinHeight]="160"
+        [cropperMinWidth]="150"
+        [onlyScaleDown]="true"
+        format="png"
+        (imageCropped)="imageCropped($event)"
+    >
+  </image-cropper>
+
+  <img class="img-fluid img-thumbnail" style="float: right" [src]="croppedImage" />
+
+    </div>
+  <form [formGroup]="form">
+  <div class="input-group pt-5 mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+      </div>
+      <div class="custom-file">
+        <input type="file" accept="image/*" formControlName="image" (change)="fileChangeEvent($event)"
+        class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+        <label class="custom-file-label" for="inputGroupFile01">Choose file...</label>
+      </div>
+    </div>
+    <div class="modal-footer no-border">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" >Cancel</button>
+        <button type="button" class="btn" (click)="uploadImg()" style="background-color: #960584; color: #fff"  >Save</button>
+    </div>
+  </form>
+</div>
+
+
+

@@ -1,11 +1,11 @@
 ion-content.background{
     --background: -webkit-linear-gradient(left, #dfdfeb, #e02f9c);
- 
-    }
+     }
 
     #buttonColor{
         --background: #960584;
     }
+
     ion-title {
         position: absolute;
         top: 0;
@@ -21,4 +21,71 @@ ion-content.background{
     #centre {
       padding-right: 30%
     }
-      
+
+    .card-header {
+      padding: .75rem 1.25rem;
+      margin-bottom: 0px;
+      margin-top: -20px;
+      background-color: rgba(0,0,0,.03);
+      border-bottom: 1px solid rgba(0,0,0,.125);
+  }
+
+  .btn-link{
+    margin-bottom: -35px;
+  }
+
+  a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+    margin-bottom: -54px;
+
+  }
+    .col[_ngcontent-ews-c2] {
+      flex-basis: 1;
+      max-width: 100%;
+      margin-left: -40px;
+      margin-right: 0px;
+  }
+
+  .col1 {
+      margin-left: 10px
+  }
+
+  .col2{
+    margin-left: 10px
+  }
+  .col {
+    margin-bottom: -25px;
+  }
+  
+  .list-ios {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: -1px;
+    margin-bottom: -6px;
+    background: var(--ion-item-background,var(--ion-background-color,#fff));
+}
+
+.list-ios .item-lines-none {
+  --border-width: 0;
+  --inner-border-width: 0;
+  
+}.grey{
+  --background: rgb(243, 242, 242);
+}
+
+.sc-ion-label-ios-h {
+  --color: cornflowerblue;
+  display: block;
+  color: var(--color);
+  font-family: var(--ion-font-family,inherit);
+  font-size: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+ion-note{
+  color: black;
+}

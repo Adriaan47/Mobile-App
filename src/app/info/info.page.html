@@ -1,95 +1,85 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-icon routerLink="/tabs/skills" size="large" slot="end" name="add-circle" slot="end" color="other">
-    </ion-icon>
-    <ion-buttons slot="start">
-      <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Skills</ion-title>
-  </ion-toolbar>
-  <!-- <ion-searchbar color="stable"></ion-searchbar> -->
+    <ion-toolbar>
+        <ion-icon routerLink="/tabs/skills" size="large" slot="end" name="add-circle" slot="end" color="other">
+        </ion-icon>
+        <ion-buttons slot="start">
+            <ion-menu-button autoHide="false" color="dark"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Skills</ion-title>
+    </ion-toolbar>
+    <!-- <ion-searchbar color="stable"></ion-searchbar> -->
 </ion-header>
 
 <ion-content padding class="background">
 
-  <ion-item Class="centre" lines="none">Skill<div slot="end"> 1 - 10</div>
-  </ion-item>
-  <ion-list>
-    <div class="col-md-8 " style="padding-top: 20px">
-      <div id="accordion">
-        <ion-card class="card" *ngFor="let skil of skills; index as i">
-          <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
+    <!-- <ion-item Class="centre" lines="none">Skill<div slot="end"> Level 1 - 10</div>
+  </ion-item> -->
+    <ion-list>
+        <div>
+            <div id="accordion">
+                <ion-list class="background" *ngFor="let skil of skills; index as i">
 
-              <a class="btn btn-link" data-toggle="collapse" attr.data-target="#collapse{{ i }}" aria-expanded="false"
-                aria-controls="collapseOne">
-                <div class="row">
-                  <div class="col">
-                    {{ skil.name | titlecase  }}
-                  </div>
-                  <div class="col">
-                    <ion-label slot="end" class="text-sm-right text-primary m-2">
-                      Level {{ skil.level }}
-                    </ion-label>
-                  </div>
+                    <ion-item lines="none" class="grey">
+                        <ion-label data-toggle="collapse" attr.data-target="#collapse{{ i }}" aria-expanded="false" aria-controls="collapseOne">{{ skil.name }}</ion-label>
+                        <ion-note slot="end" color="primary">{{ skil.level }}</ion-note>
+                    </ion-item>
 
-                  <div class="col-md-0">
-                    <a class="editIcon text-secondary" (click)="onEditSkill(skil.id)" href="#addskill" data-toggle="tab"
-                      href="#public" id="public-tab" aria-controls="public" role="tab">
-                      <i class="fas fa-trash-alt fa-2x m-2 " style="font-size:20px;"></i>
+
+                    <a class="btn btn-link" data-toggle="collapse" attr.data-target="#collapse{{ i }}" aria-expanded="false" aria-controls="collapseOne">
+
+
+                        <div>
+                            <a class="editIcon text-secondary" (click)="onEditSkill(skil.id)" href="#addskill" data-toggle="tab" href="#public" id="public-tab" aria-controls="public" role="tab">
+                                <i class="fas fa-trash-alt fa-2x m-2 " style="font-size:20px;"></i>
+                            </a>
+                        </div>
+
+                        <div>
+                            <a class="editIcon text-primary" data-toggle="tab" href="#public" id="public-tab" aria-controls="public" role="tab">
+                                <i class="fas fa-pencil-alt fa-2x m-2" style="font-size:20px;"></i>
+                            </a>
+                        </div>
+
                     </a>
-                  </div>
+                    <!-- </h5> -->
+                    <!-- </div> -->
 
-                  <div class="col-md-1">
-                    <a class="editIcon text-primary" data-toggle="tab" href="#public" id="public-tab"
-                      aria-controls="public" role="tab">
-                      <i class="fas fa-pencil-alt fa-2x m-2" style="font-size:20px;"></i>
-                    </a>
-                  </div>
-                </div>
-              </a>
-            </h5>
-          </div>
+                    <div id="collapse{{ i }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" *ngIf="skil">
+                        <div class="card-body">
+                            <div class="info">
+                                <span style="color:rgba(126, 126, 126)">Origin </span> {{ skil.origin }}
+                            </div>
+                            <!-- <br /> -->
+                            <div class="info">
+                                <span style="color:rgba(126, 126, 126)">Skill level </span> {{ skil.level }}
+                            </div>
+                            <!-- <br /> -->
+                            <div class="info">
+                                <span style="color:rgba(126, 126, 126)">Last used </span> {{ skil.lastUsed | date }}
+                            </div>
+                            <br />
+                            <div class="info">
+                                <span style="color:rgba(126, 126, 126)">Months of active experience
+                </span> {{ skil.activeExperience }}
+                            </div>
+                            <!-- <br /> -->
+                            <div class="info">
+                                <span style="color:rgba(126, 126, 126)">Developing skill further?
+                </span> {{ skil.active}}
+                            </div>
+                            <!-- <br /> -->
+                        </div>
+                        <ion-item lines="none">
+                            <ion-icon name="md-create" size="large" color="dark" [routerLink]="['/edit-details', skil.id]" slot="end">
+                            </ion-icon>
+                            <ion-icon name="trash" size="large" (click)="presentAlertConfirmDelete(skil.id)" color="dark" slot="end"></ion-icon>
+                            <!-- (click)="deleteSkill(skil.id)" -->
+                        </ion-item>
 
-          <div id="collapse{{ i }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" *ngIf="skil">
-            <div class="card-body">
-              <div class="info">
-                <span class="font-weight-bold">Origin: </span>
-                {{ skil.origin | titlecase  }}
-              </div>
-              <br />
-              <div class="info">
-                <span class="font-weight-bold">skill Level: </span>
-                {{ skil.level }}
-              </div>
-              <br />
-              <div class="info">
-                <span class="font-weight-bold">Last Used: </span>
-                {{ skil.lastUsed | date }}
-              </div>
-              <br />
-              <div class="info">
-                <span class="font-weight-bold">Months of Active Experience:
-                </span>
-                {{ skil.activeExperience }}
-              </div>
-              <br />
-              <div class="info">
-                <span class="font-weight-bold">Are you actively developing this skill further ?
-                </span>
-                {{ skil.active | titlecase }}
-              </div>
-              <br />
+                    </div>
+                </ion-list>
             </div>
-            <ion-item>
-              <ion-icon name="md-create" size="large" color="dark" [routerLink]="['/edit-details', skil.id]" slot="end"></ion-icon>
-              <ion-icon name="trash" size="large" color="dark" slot="end" (click)="deleteSkill(skil.id)"></ion-icon>
-            </ion-item>
-
-          </div>
-        </ion-card>
-      </div>
-    </div>
-  </ion-list>
+        </div>
+    </ion-list>
 
 </ion-content>

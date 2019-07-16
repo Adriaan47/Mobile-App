@@ -66,7 +66,7 @@ export class ProfilePage implements OnInit {
           text: 'No',
           role: 'cancel',
           cssClass: 'secondary',
-          handler: (blah) => {
+          handler: () => {
             console.log('Confirm Cancel: ?');
           }
         }, {

@@ -127,8 +127,9 @@ buttons: [
 {
 text: 'OK',
 handler: () => {
-this.router.navigate(['/tabs/profile']);
+ this.router.navigate(['/tabs/profile']);
 this.refresh();
+
 }
 
 }
@@ -146,7 +147,7 @@ await alert.present();
           text: 'No',
           role: 'cancel',
           cssClass: 'secondary',
-          handler: (blah) => {
+          handler: () => {
             console.log('Confirm Cancel: ?');
           }
         }, {
@@ -165,28 +166,6 @@ await alert.present();
 updateProfilePicture() {
     this.fileBtn.nativeElement.click();
 }
-
-    uploadImg(file: any) {
-    this.selectedIMG = file.files[0];
-    file = this.selectedIMG;
-    console.log(file);
-    const filePath = `profile/${this.users.getUID()}/${file.name}`;
-    const fileRef = this.storage.ref(filePath);
-    this.storage.upload(filePath, file).snapshotChanges().pipe(
-    finalize(() => fileRef.getDownloadURL().subscribe((url) => {
-    this.imgURL = url;
-    const imgage: string = this.imgURL;
-    this.afs.collection(`users`)
-    .doc(this.users.getUID())
-    .update({
-    profilePicture: imgage,
-    }).catch(err => {
-    return err.message;
-    });
-    })
-    )
-    ).subscribe();
-    }
 
     refresh(): void {
         window.location.reload();

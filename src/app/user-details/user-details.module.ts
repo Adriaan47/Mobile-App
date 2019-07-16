@@ -2,14 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { ImageCropperModule } from 'ngx-image-cropper';
+
 import { IonicModule } from '@ionic/angular';
-import { EditProfilePage } from './edit-profile.page';
+
+import { UserDetailsPage } from './user-details.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: EditProfilePage
+    component: UserDetailsPage
   }
 ];
 
@@ -18,9 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes),
-    ImageCropperModule
+    RouterModule.forChild(routes)
   ],
-  declarations: [EditProfilePage]
+  declarations: [UserDetailsPage]
 })
-export class EditProfilePageModule {}
+export class UserDetailsPageModule {}

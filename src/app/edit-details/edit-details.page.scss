@@ -41,13 +41,22 @@ ion-title {
   text-align: center;
 }
 
-.item-avatar  {     
-  width:133% !important;  
-  height : 133% !important;  
-  max-width: 133px !important;  //any size
-  max-height: 133px !important; //any size 
+.item-avatar {
+  width: 133% !important;
+  height: 133% !important;
+  max-width: 133px !important; //any size
+  max-height: 133px !important; //any size
 }
 .TextPadding {
   white-space: pre;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
+}
+FontSize1 {
+  font-size: 17px;
+  color: rgb(126, 126, 126);
+}
+
+.FontSize {
+  font-size: 20px;
+  color: rgb(126, 126, 126);
 }
