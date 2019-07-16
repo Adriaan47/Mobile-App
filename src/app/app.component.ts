@@ -30,7 +30,7 @@ export class AppComponent {
     });
   }
 
-  async presentAlertConfirm() {
+  async presentAlertConfirmLogout() {
     const alert = await this.alertCtrl.create({
       header: 'Logout',
       message: 'Are you sure you want to logout?',
@@ -39,7 +39,7 @@ export class AppComponent {
           text: 'No',
           role: 'cancel',
           cssClass: 'secondary',
-          handler: (blah) => {
+          handler: () => {
             console.log('Confirm Cancel: ?');
           }
         }, {

@@ -12,7 +12,10 @@ interface user {
   uid: string;
   }
 // tslint:disable-next-line: no-unused-expression
-
+interface Pictures {
+  avatar: string;
+  profilePicture: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +51,6 @@ export class UsersService {
         return this.http.delete(this.skillUrl + `/${uid}/delete/${id}`);
         }
 
-
         createSkill (uid: string, skill: Skills) {
           return this.http.post(this.skillUrl + `/${uid}/create`, skill );
         }
@@ -69,6 +71,10 @@ export class UsersService {
 
         getDatas(id: string): Observable<Object> {
           return this.http.get(`http://localhost:3000/users/${id}/get-public`);
+        }
+
+        getMember(id: string) {
+          return this.http.get(`http://localhost:3000/users/${id}/member`);
         }
 
         getSkills(id: string): Observable<Object> {
@@ -124,6 +130,10 @@ export class UsersService {
           return this.user.uid;
       }
 
+  }
+  // get profile picture
+  getPictures(id: string): Observable<Pictures> {
+    return this.http.get<Pictures>(`https://demoproject-8b1fa.appspot.com/users/${id}/pictures`);
   }
 
   }
