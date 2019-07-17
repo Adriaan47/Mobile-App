@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { RegisterPage } from '../register/register.page';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { ReactiveFormsModule, Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
