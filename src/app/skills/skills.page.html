@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar >
-    <ion-icon (click)="presentAlertBack()" slot="start" name="arrow-round-back" size="large"  size="large"></ion-icon>
+  <ion-toolbar>
+    <ion-icon (click)="presentAlertBack()" slot="start" name="arrow-round-back" size="large" size="large"></ion-icon>
     <ion-title>Add skill</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,7 +13,7 @@
 
         <div class="form-group">
           <ion-item lines="none">
-            <ion-label  class="FontSize"  position="floating" for="Skill_name">Skill</ion-label>
+            <ion-label class="FontSize" position="floating" for="Skill_name">Skill</ion-label>
             <ion-input type="text" class="form-control" placeholder=" " id="name" required [(ngModel)]="name"
               name="name" #Skill_name="ngModel"></ion-input>
           </ion-item>
@@ -24,13 +24,12 @@
           </div>
         </div>
 
-
         <div class="form-group">
           <ion-item lines="none">
-            <ion-label  class="FontSize"  position="floating" for="Origin">Origin</ion-label>
+            <ion-label class="FontSize" position="floating" for="Origin">Origin</ion-label>
             <ion-select class="form-control" placeholder=" " id="origin" required [(ngModel)]="origin" name="origin"
               #Origin="ngModel">
-              <ion-select-option value="University">Tertiary</ion-select-option>
+              <ion-select-option selected value="Tertiary">Tertiary</ion-select-option>
               <ion-select-option value="Online course">Online course</ion-select-option>
               <ion-select-option value="Self-study">Self Study</ion-select-option>
             </ion-select>
@@ -45,7 +44,7 @@
         <div class="form-group">
 
           <ion-item lines="none">
-            <ion-label  class="FontSize"  position="floating" for="Skill_level">Skill level (1 - 10)</ion-label>
+            <ion-label class="FontSize" position="floating" for="Skill_level">Skill level (1 - 10)</ion-label>
             <ion-input type="text" class="form-control" placeholder=" " required pattern="[01-9]{0,2}" id="level"
               [(ngModel)]="level" name="level" #Skill_level="ngModel">
             </ion-input>
@@ -60,7 +59,7 @@
 
         <div class="form-group">
           <ion-item lines="none">
-            <ion-label  class="FontSize"  position="floating" for="last_Used">Date last used</ion-label>
+            <ion-label class="FontSize" position="floating" for="last_Used">Date last used</ion-label>
             <ion-datetime class="form-control" placeholder=" " id="lastUsed" required [(ngModel)]="lastUsed"
               name="lastUsed" #last_Used="ngModel" display-format="DD MMM YYYY"></ion-datetime>
           </ion-item>
@@ -71,14 +70,10 @@
           </div>
         </div>
 
-
-
-
-
-
         <div class="form-group">
           <ion-item lines="none">
-            <ion-label  class="FontSize"  position="floating" for="active_Experience">Months of active experience</ion-label>
+            <ion-label class="FontSize" position="floating" for="active_Experience">Months of active experience
+            </ion-label>
             <ion-input type="text" class="form-control" placeholder=" " id="activeExperience" required
               [(ngModel)]="activeExperience" name="activeExperience" #active_Experience="ngModel">
             </ion-input>
@@ -90,11 +85,9 @@
           </div>
         </div>
 
-
         <div class="form-group">
           <ion-item lines="none">
-            <ion-label  class="FontSize"  position="floating" for="active_dev">Are you
-              currently developing this skill?
+            <ion-label class="FontSize" position="floating" for="active_dev">Currently developing skill?
             </ion-label>
             <ion-select class="form-control" placeholder=" " id="active" required [(ngModel)]="active" name="active"
               #active_dev="ngModel">
@@ -108,10 +101,9 @@
 
           </div>
         </div>
-        <!-- <span> {{ heroForm1.value | json }} </span> -->
         <ion-item lines="none">
-          <ion-button style="text-transform: none;" id="buttonColor" (click)="presentAlertConfirm1()" type="submit"
-            shape="square" size="medium" slot="end" [disabled]="!heroForm1.form.valid">
+          <ion-button style="text-transform: none;" id="buttonColor" (click)="presentAlertConfirmAddSkill()"
+            type="submit" shape="square" size="medium" slot="end" [disabled]="!heroForm1.form.valid">
             Add skill</ion-button>
         </ion-item>
       </form>

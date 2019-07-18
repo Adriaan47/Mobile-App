@@ -31,6 +31,7 @@ export class EditDetailsPage implements OnInit {
   res: any;
   skills: any;
   origin;
+  name: any;
 
 
   constructor(
@@ -43,11 +44,12 @@ export class EditDetailsPage implements OnInit {
     private user: UserService,
     public alertCtrl: AlertController
   ) { }
-
+    skill: any;
   ngOnInit() {
     this.skillID = this.route.snapshot.paramMap.get('id');
     this.mainuser = this.afs.doc(`users/${this.users.getUID()}/skills/${this.skillID}`);
     this.sub = this.mainuser.valueChanges().subscribe(event => {
+      this.name = event.name;
       this.level = event.level;
       this.active = event.active;
       this.lastUsed = event.lastUsed;
@@ -60,6 +62,7 @@ export class EditDetailsPage implements OnInit {
     this.skillID = this.route.snapshot.paramMap.get('id');
     this.busy = true;
     this.afs.doc(`users/${this.users.getUID()}/skills/${this.skillID}`).update({
+      name: this.name,
       level: this.level,
       lastUsed: this.lastUsed,
       activeExperience: this.activeExperience,
@@ -107,7 +110,7 @@ export class EditDetailsPage implements OnInit {
           text: 'OK',
           handler: () => {
             this.router.navigate(['/tabs/info']);
-            
+            this.refresh();
           }
         }
       ]
