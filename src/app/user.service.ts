@@ -4,6 +4,7 @@ import { first } from 'rxjs/operators';
 import { auth } from 'firebase/app';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AlertController } from '@ionic/angular';
 
 // tslint:disable-next-line: class-name
 interface user {
@@ -18,7 +19,8 @@ public user: user;
 // tslint:disable-next-line: no-inferrable-types
 private url: string = 'https://demoproject-8b1fa.appspot.com/users';
 
-constructor(public afAuth: AngularFireAuth, private http: HttpClient) {
+
+constructor(public afAuth: AngularFireAuth, private alertController: AlertController, private http: HttpClient) {
 
 }
 
@@ -91,5 +93,19 @@ getUID() {
     }
 
 }
-
+// email link for reset password
+resetPassword(email: string) {
+    return this.afAuth.auth.sendPasswordResetEmail(email).then(() => {
+    this.presentAlert('Password reset', 'Password reset email sent, check your inbox.')
+    }).catch(error => this.presentAlert('Error occured ', error.message));
+    }
+    
+    async presentAlert(title: string, content: string) {
+    const alert = await this.alertController.create({
+    header: title,
+    message: content,
+    buttons: ['OK']
+    });
+    await alert.present();
+    } 
 }
