@@ -25,15 +25,14 @@
 
   </ion-item>
 
-
-
-  <ion-list>
+ <ion-list>
     <div [hidden]="submitted" padding>
       <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
 
         <div class="form-group">
 
           <ion-label class="FontSize" position="floating">First name(s)</ion-label>
+          
           <ion-input type="text" class="form-control" id="name" required [(ngModel)]="name" name="name"
             #First_name="ngModel">
           </ion-input>

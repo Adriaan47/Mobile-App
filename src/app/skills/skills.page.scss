@@ -39,3 +39,9 @@ FontSize1{
   font-size: 20px;
   color: 	rgb(126, 126, 126);
 }
+
+.item-has-focus.label-floating.sc-ion-label-md-h, .item-has-focus .label-floating.sc-ion-label-md-h, .item-has-placeholder.label-floating.sc-ion-label-md-h, .item-has-placeholder .label-floating.sc-ion-label-md-h, .item-has-value.label-floating.sc-ion-label-md-h, .item-has-value .label-floating.sc-ion-label-md-h {
+  -webkit-transform: translate3d(0,50%,0) scale(.75);
+  transform: translate3d(0,50%,0) scale(.75);
+  margin-bottom: 10px;
+}
