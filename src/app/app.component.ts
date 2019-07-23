@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { MenuController } from '@ionic/angular';
+import { UserService } from './user.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +20,9 @@ export class AppComponent {
     private alertCtrl: AlertController,
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private afAuth: AngularFireAuth,
+    private userServ: UserService
   ) {
     this.initializeApp();
   }
@@ -57,4 +61,8 @@ export class AppComponent {
   openEnd() {
     this.menu.open('end');
   }
+  reset() {
+    const userEmail = this.afAuth.auth.currentUser.email;
+    this.userServ.resetPassword(userEmail)
+    } 
 }
