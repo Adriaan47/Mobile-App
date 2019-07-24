@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { UsersService } from '../services/users.service';
@@ -21,7 +20,6 @@ export class EditProfilePage implements OnInit {
 
 constructor(
 private users: UsersService,
-private http: Http,
 private afs: AngularFirestore,
 private router: Router,
 private storage: AngularFireStorage,
