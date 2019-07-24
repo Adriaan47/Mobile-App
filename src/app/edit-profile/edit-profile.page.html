@@ -19,8 +19,8 @@
 
     <ion-label class="nickname">
       <ion-label class="FontSize1">First name & Surname</ion-label>
-      <ion-input class="ReduceHeight" placeholder=" ">{{name}} {{surname}}
-      </ion-input>
+      <ion-label class="ReduceHeight" placeholder=" ">{{nickname}} {{surname}}
+      </ion-label>
     </ion-label>
 
   </ion-item>
@@ -61,7 +61,7 @@
         <div class="form-group">
 
           <ion-label class="FontSize" position="floating" for="First_name">Career level</ion-label>
-          <ion-input class="form-control" id="careerLevel" required [(ngModel)]="careerLevel" name="careerLevel"
+          <ion-input class="form-control" readonly id="careerLevel"  [(ngModel)]="careerLevel" name="careerLevel"
             #First_name="ngModel"></ion-input>
 
           <div [hidden]="First_name.valid || First_name.pristine" class="alert-danger">
@@ -86,7 +86,7 @@
 
         <div class="form-group">
 
-          <ion-label class="FontSize" position="floating" for="First_name">Nickname</ion-label>
+          <ion-label class="FontSize" position="floating" for="First_name">Nick Name</ion-label>
           <ion-input type="text" class="form-control" id="nickname" required [(ngModel)]="nickname" name="nickname"
             #First_name="ngModel"></ion-input>
 

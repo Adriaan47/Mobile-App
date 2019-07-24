@@ -79,6 +79,14 @@
         </ion-item>
       </div>
 
+      
+      <div class="profile-info">
+        <ion-item *ngIf="res">
+          <ion-label class="FontSize" position="floating">Nick Name</ion-label>
+          <ion-input disable="true" color="dark" placeholder=''>{{ res.nickname }}</ion-input>
+        </ion-item>
+      </div>
+
       <!-- <div class="profile-info">
           <ion-item *ngIf="res">
             <ion-label class="FontSize" position="floating">Birth date</ion-label>
