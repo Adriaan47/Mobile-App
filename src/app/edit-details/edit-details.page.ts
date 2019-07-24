@@ -141,5 +141,9 @@ export class EditDetailsPage implements OnInit {
     });
     await alert.present();
   }
+
+  back() {
+    this.router.navigate(['tabs/profile']);
+  }
 }
 
