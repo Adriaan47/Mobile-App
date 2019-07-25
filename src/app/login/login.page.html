@@ -25,9 +25,6 @@
 				</div>
 			</div>
 
-
-
-
 			<!-- <div class="container" id="grad"> -->
 			<div [hidden]="submitted">
 				<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
@@ -47,7 +44,7 @@
 
 
 
-					<ion-button style="text-transform: none;" slot="end" type="submit" expand="block" id="btnLogin"
+					<ion-button style="text-transform: none;" slot="end" type="submit" expand="block" class="btnLogin"
 						[disabled]="!heroForm.valid" shape="square" (click)="login()" size="medium">
 						Login</ion-button>
 
