@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { Skills } from '../services/skills';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { UserPublic } from './user.public.interface';
 
 
 // tslint:disable-next-line: class-name
@@ -72,31 +73,31 @@ export class UsersService {
 
 
         getCurrentUserSkill(uid: string, sid: string): Observable<Skills> {
-          return this.http.get<Skills>(`https://demoproject-8b1fa.appspot.com/users/skills/${uid}/skill/${sid}`);
+          return this.http.get<Skills>(`https://demoproject-8b1fa.appspot.com/skills/${uid}/skill/${sid}`);
           }
 
       getData(): Observable<Object> {
           return this.http.get(this.url);
         }
 
-        getProfilePicture(id: string): Observable<Object> {
-          return this.http.get(`https://demoproject-8b1fa.appspot.com/users/${id}/pictures`);
+        getProfilePicture(id: string): Observable<Pictures> {
+          return this.http.get<Pictures>(`https://demoproject-8b1fa.appspot.com/users/${id}/pictures`);
         }
 
-        getDatas(id: string): Observable<Object> {
-          return this.http.get(`https://demoproject-8b1fa.appspot.com/users/${id}/get-public`);
+        getDatas(id: string): Observable<UserPublic> {
+          return this.http.get<UserPublic>(`https://demoproject-8b1fa.appspot.com/users/${id}/get-public`);
         }
 
         getMember(id: string) {
           return this.http.get(`https://demoproject-8b1fa.appspot.com/users/${id}/member`);
         }
 
-        getSkills(id: string): Observable<Object> {
-          return this.http.get(`https://demoproject-8b1fa.appspot.com/skills/${id}`);
+        getSkills(id: string): Observable<Skills> {
+          return this.http.get<Skills>(`https://demoproject-8b1fa.appspot.com/skills/${id}`);
         }
 
-        getSkillID(id: string, sid: string): Observable<Object> {
-          return this.http.get(`https://demoproject-8b1fa.appspot.com/skills/${id}/skill/${sid}`);
+        getSkillID(id: string, sid: string): Observable<Skills> {
+          return this.http.get<Skills>(`https://demoproject-8b1fa.appspot.com/skills/${id}/skill/${sid}`);
         }
 
     reAuth(username: string, password: string) {

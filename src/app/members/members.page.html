@@ -9,17 +9,7 @@
 
 <ion-content padding class="background">
     <ion-searchbar></ion-searchbar>
-    <!--   
-    <ion-list>
-        <ion-list *ngFor="let post of data">
-            <ion-reorder-group disabled="false" id="reorder">
-                <ion-item lines="none">
-                    <ion-label >{{ post.name }} {{ post.surname }} </ion-label>
-                    <ion-item slot="end" lines="none"> {{ post.careerLevel }}</ion-item>
-                 </ion-item>
-                </ion-reorder-group>
-        </ion-list>
-      </ion-list> -->
+    
 
     <ion-list>
         <ion-list *ngFor="let post of data">
@@ -32,56 +22,5 @@
         </ion-list>
     </ion-list>
 
-    <!-- <ion-list >
-          <div class="col-md-8 " style="padding-top: 20px" >
-                <div id="accordion">
-                     <ion-card class="card" *ngFor="let post of data; index as i">
-                     <div class="card-header" id="headingOne">
-                     <h5 class="mb-0">
-                     
-                     <a class="btn btn-link" data-toggle="collapse" attr.data-target="#collapse{{ i }}" aria-expanded="false"
-                     aria-controls="collapseOne">
-               <div class="row">
-                  <ion-thumbnail  slot="start">
-                      <ion-avatar><img src="https://ucarecdn.com/{{ post.profilePic }}/-/scale_crop/150x150/center/"></ion-avatar>
-                    </ion-thumbnail>
-                     <ion-label class="col">
-                     {{ post.name }} {{ post.surname }}
-                     </ion-label>
-                     <div class="col-md-0">
-                     <a class="editIcon text-secondary" (click)="onEditSkill(post.id)" href="#addskill" data-toggle="tab"
-                     href="#public" id="public-tab" aria-controls="public" role="tab">
-                     <i class="fas fa-trash-alt fa-2x m-2 " style="font-size:20px;"></i>
-                     </a>
-                     </div>
-                     
-                     <div class="col-md-1">
-                     <a class="editIcon text-primary" data-toggle="tab" href="#public" id="public-tab"
-                     aria-controls="public" role="tab">
-                     <i class="fas fa-pencil-alt fa-2x m-2" style="font-size:20px;"></i>
-                     </a>
-                     </div>
-               </div>
-                     </a>
-                     </h5>
-                     </div>
-                     <div id="collapse{{ i }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion"
-                     *ngIf="post">
-                     <div class="card-body">
-                     <div class="info">
-                     <span > Career level__</span>
-                     {{ post.careerLevel }}
-                     </div>
-                     <br />
-                     <div class="info">
-                     <span > Mobile No__ </span>
-                     {{ post.mobile }}
-                     </div>
-                     <br />
-                     </div>
-                     </div>
-                     </ion-card>
-                </div>
-           </div> 
-       </ion-list> -->
+    
 </ion-content>

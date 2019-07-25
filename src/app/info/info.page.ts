@@ -42,7 +42,7 @@ export class InfoPage implements OnInit {
 
   ngOnInit() {
     this.uid = this.users.getUID();
-    this.users.getSkills(this.uid).subscribe((res: Skills[]) => {
+    this.users.getSkills(this.uid).subscribe(res => {
       this.skills = res;
       console.log(res);
    });

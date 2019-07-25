@@ -20,6 +20,7 @@ export class ProfilePage implements OnInit {
   sub;
   res: any;
   data: any;
+  userData: any;
 
   constructor(
     public router: Router,
@@ -40,15 +41,16 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
     this.users.getMember(this.users.getUID()).subscribe((res) => {
       this.res = res;
-      console.log(res);
+    });
+    this.users.getDatas(this.users.getUID()).subscribe(user => {
+      this.userData = user;
     });
 
   }
 
   getDp() {
     this.users.getProfilePicture(this.users.getUID()).subscribe((data) => {
-      this.data = data;
-      console.log(data);
+      this.data = data.avatar;
     });
   }
 
