@@ -9,7 +9,7 @@ export class DataService {
 private url: any = [];
 
   constructor(private http: HttpClient) {
-    this.url  = 'http://localhost:3000/users';
+    this.url  = 'https://demoproject-8b1fa.appspot.com/users';
   }
 
 }

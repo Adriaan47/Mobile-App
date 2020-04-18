@@ -14,8 +14,8 @@
 			<div class="form-group">
 
 				<ion-label position="floating" for="name">Enterprise ID</ion-label>
-				<ion-input type="text" class="form-control" id="name" required [(ngModel)]="username" name="name"
-					placeholder="" #name="ngModel"></ion-input>
+				<ion-input type="text" class="form-control" id="txtEID" required [(ngModel)]="username" name="name" placeholder="" #name="ngModel">
+				</ion-input>
 
 
 				<div [hidden]="name.valid || name.pristine" class="alert-danger">
@@ -34,7 +34,7 @@
 					<div class="form-group">
 
 						<ion-label position="floating" for="password1">Password</ion-label>
-						<ion-input type="password" class="form-control" id="password" required [(ngModel)]="password"
+						<ion-input type="password" id="txtPassword" class="form-control" required [(ngModel)]="password"
 							placeholder="" name="password" #password1="ngModel">
 						</ion-input>
 
@@ -47,7 +47,7 @@
 
 
 
-					<ion-button style="text-transform: none;" slot="end" type="submit" expand="block" id="buttonColor"
+					<ion-button style="text-transform: none;" slot="end" type="submit" expand="block" id="btnLogin"
 						[disabled]="!heroForm.valid" shape="square" (click)="login()" size="medium">
 						Login</ion-button>
 

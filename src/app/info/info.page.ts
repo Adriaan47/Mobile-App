@@ -61,7 +61,7 @@ export class InfoPage implements OnInit {
             text: 'No',
             role: 'cancel',
             cssClass: 'secondary',
-            handler: (blah) => {
+            handler: () => {
               console.log('Confirm Cancel: ?');
             }
           }, {
@@ -85,7 +85,7 @@ export class InfoPage implements OnInit {
             text: 'No',
             role: 'cancel',
             cssClass: 'secondary',
-            handler: (blah) => {
+            handler: () => {
               console.log('Confirm Cancel: ?');
             }
           }, {
