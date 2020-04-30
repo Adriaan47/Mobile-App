@@ -42,7 +42,7 @@
     "firebase": "^5.9.4",
     "force": "0.0.3",
     "ionic-calendar-date-picker": "^0.1.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.15.0",
     "rxjs": "^6.5.2",
     "rxjs-compat": "^6.5.2",
